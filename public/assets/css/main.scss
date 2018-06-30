@@ -1,0 +1,36 @@
+// Colors
+
+$white: #fff;
+$white-hov: rgba(255,255,255,0.7);
+$grey-text: #7F7F7F;
+
+// Font weights
+
+$light-weight: 300;
+$medium-weight: 400;
+
+.track-name {
+  font-weight: bold;
+}
+
+.album-artwork {
+  height: 50px;
+  width: auto;
+  float: left;
+}
+
+li {
+  height: 70px;
+}
+
+.artist-name {
+  color: $grey-text;
+}
+
+.artist-name:after {
+    content: ',';
+}
+
+.artist-name:last-of-type:after {
+    content: '';
+}
