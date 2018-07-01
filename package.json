@@ -4,6 +4,7 @@
   "description": "view your top spotify tracks and artists over time",
   "main": "index.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "scss": "node-sass --watch authorization_code/public/assets/scss -o authorization_code/public/assets/css"
   },
