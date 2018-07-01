@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="125px" height="125px" viewBox="0 0 125 125" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="103.920955%" y1="73.0049789%" x2="6.69452333%" y2="75.2136226%" id="linearGradient-1">
+            <stop stop-color="#992BF4" offset="0%"></stop>
+            <stop stop-color="#908FCA" offset="38.4664017%"></stop>
+            <stop stop-color="#3251D5" offset="67.1716944%"></stop>
+            <stop stop-color="#1D18A3" offset="100%"></stop>
+        </linearGradient>
+        <path d="M5,72.5884842 C5.16582299,72.5884842 10.1983978,71.9185955 14.5,73 C17.4387636,73.7387927 19.2697338,76.8057795 22,75.5 C33.5,70 28,50.0884842 35,50.0884842 C42,50.0884842 35.9496167,81.3249176 45.5,79.5884842 C56.5,77.5884842 48.4620071,37.4783699 60,35.0493187 C69.5,33.0493187 61.7156853,92.5569442 73,90.0493187 C82,88.0493187 77.8908901,57.5884842 86.5,57.5884842 C92.5,57.5884842 90.5,86.0884842 95.5,83.0884842 C100.5,80.0884842 99.1677135,61.1677135 105,67 C110,72 112.5,72.5884842 115.5,72.5884842 C117.5,72.5884842 119.833333,72.5884842 122.5,72.5884842" id="path-2"></path>
+        <filter x="-6.8%" y="-10.9%" width="113.6%" height="129.0%" filterUnits="objectBoundingBox" id="filter-3">
+            <feMorphology radius="1" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feMorphology radius="1" operator="erode" in="SourceAlpha" result="shadowInner"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowInner" result="shadowInner"></feOffset>
+            <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"></feComposite>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.230129076 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Path-2">
+            <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+            <use stroke="url(#linearGradient-1)" stroke-width="2" xlink:href="#path-2"></use>
+        </g>
+    </g>
+</svg>

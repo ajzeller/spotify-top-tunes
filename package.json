@@ -4,7 +4,8 @@
   "description": "view your top spotify tracks and artists over time",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch authorization_code/public/assets/scss -o authorization_code/public/assets/css"
   },
   "author": "Andrew Zeller",
   "license": "ISC",
@@ -17,9 +18,6 @@
     "node-sass": "^4.9.0",
     "querystring": "~0.2.0",
     "request": "~2.83.0",
-    "dotenv": "6.0.0",
-  },
-  "scripts": {
-    "scss": "node-sass --watch authorization_code/public/assets/scss -o authorization_code/public/assets/css"
+    "dotenv": "6.0.0"
   }
 }
