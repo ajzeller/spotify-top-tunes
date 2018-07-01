@@ -11,16 +11,27 @@ function getHashParams() {
   }
   return hashParams;
 }
+
+
 var userProfileSource = document.getElementById('user-profile-template').innerHTML, // handlebars gets template
     userProfileTemplate = Handlebars.compile(userProfileSource), // handlebars compiles template into function
     userProfilePlaceholder = document.getElementById('user-profile'); // output of handlebars function placed in element
 var topTracksSource = document.getElementById('top-tracks-template').innerHTML,
     topTracksTemplate = Handlebars.compile(topTracksSource);
     topTracksPlaceholder = document.getElementById('topTracks');
-var params = getHashParams();
-var access_token = params.access_token,
-    refresh_token = params.refresh_token,
-    error = params.error;
+// var params = getHashParams();
+
+// var access_token = params.access_token,
+//     refresh_token = params.refresh_token,
+//     error = params.error;
+
+var access_token = Cookies.get('access_token'),
+    refresh_token = Cookies.get('refresh_token');
+     error = false;
+
+console.log('test');
+console.log(access_token);
+
 if (error) {
   alert('There was an error during the authentication');
 } else {
