@@ -17,7 +17,6 @@ var cookieParser = require('cookie-parser');
 
 var client_id = process.env.CLIENT_ID; // Your client id
 var client_secret = process.env.CLIENT_SECRET; // Your secret
-var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
 
 /**
  * Generates a random string containing numbers and letters
@@ -43,6 +42,13 @@ app.use(express.static(__dirname + '/public'))
    .use(cookieParser())
    .use(bodyParser.json());
 
+if(process.env.NODE_ENV === 'development') {
+  var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
+}
+
+if(process.env.NODE_ENV === 'production') {
+  var redirect_uri = 'https://lit-waters-66227.herokuapp.com/callback'; // Your redirect uri
+}
 
 app.get('/login', function(req, res) {
 
