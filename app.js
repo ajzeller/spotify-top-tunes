@@ -14,6 +14,7 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
+var exphbs  = require('express-handlebars');
 
 var client_id = process.env.CLIENT_ID; // Your client id
 var client_secret = process.env.CLIENT_SECRET; // Your secret
@@ -36,11 +37,21 @@ var generateRandomString = function(length) {
 var stateKey = 'spotify_auth_state';
 
 var app = express();
+var path = require("path");
+
 
 app.use(express.static(__dirname + '/public'))
    .use(cors())
    .use(cookieParser())
    .use(bodyParser.json());
+
+app.set('views', __dirname + '/public/views/');
+app.engine('handlebars', exphbs({
+  defaultLayout: 'main',
+  extname: '.handlebars',
+  layoutsDir: __dirname + '/public/views/layouts/'
+}));
+app.set('view engine', 'handlebars');
 
 if(process.env.NODE_ENV === 'development') {
   var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
@@ -49,6 +60,10 @@ if(process.env.NODE_ENV === 'development') {
 if(process.env.NODE_ENV === 'production') {
   var redirect_uri = 'https://lit-waters-66227.herokuapp.com/callback'; // Your redirect uri
 }
+
+app.get('/', function (req, res) {
+    res.render('home');
+});
 
 app.get('/login', function(req, res) {
 
@@ -116,9 +131,10 @@ app.get('/callback', function(req, res) {
         // });
 
         // we can also pass the token to the browser to make requests from there
-
+        res.clearCookie('refresh_token');
+        // res.clearCookie('access_token');
         res.cookie('refresh_token', refresh_token, { maxAge: 604800000, httpOnly: false });
-        res.cookie('access_token', access_token, { maxAge: 604800000, httpOnly: false });
+        // res.cookie('access_token', access_token, { maxAge: 604800000, httpOnly: false });
 
         res.redirect('/#');
         // res.redirect('/#' +
@@ -136,29 +152,29 @@ app.get('/callback', function(req, res) {
   }
 });
 
-// app.get('/refresh_token', function(req, res) {
-//
-//   // requesting access token from refresh token
-//   var refresh_token = req.query.refresh_token;
-//   var authOptions = {
-//     url: 'https://accounts.spotify.com/api/token',
-//     headers: { 'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64')) },
-//     form: {
-//       grant_type: 'refresh_token',
-//       refresh_token: refresh_token
-//     },
-//     json: true
-//   };
-//
-//   request.post(authOptions, function(error, response, body) {
-//     if (!error && response.statusCode === 200) {
-//       var access_token = body.access_token;
-//       res.send({
-//         'access_token': access_token
-//       });
-//     }
-//   });
-// });
+app.get('/refresh_token', function(req, res) {
+
+  // requesting access token from refresh token
+  var refresh_token = req.query.refresh_token;
+  var authOptions = {
+    url: 'https://accounts.spotify.com/api/token',
+    headers: { 'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64')) },
+    form: {
+      grant_type: 'refresh_token',
+      refresh_token: refresh_token
+    },
+    json: true
+  };
+
+  request.post(authOptions, function(error, response, body) {
+    if (!error && response.statusCode === 200) {
+      var access_token = body.access_token;
+      res.send({
+        'access_token': access_token
+      });
+    }
+  });
+});
 
 // app.get('/getJSON', function (req, res) {
 //   // your application requests refresh and access tokens

@@ -19,6 +19,7 @@
     "node-sass": "^4.9.0",
     "querystring": "~0.2.0",
     "request": "~2.83.0",
-    "dotenv": "6.0.0"
+    "dotenv": "6.0.0",
+    "express-handlebars": "3.0.0"
   }
 }
