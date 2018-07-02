@@ -49,7 +49,7 @@ app.set('views', __dirname + '/public/views/');
 app.engine('handlebars', exphbs({
   defaultLayout: 'main',
   extname: '.handlebars',
-  layoutsDir: __dirname + '/public/views/layouts/'
+  layoutsDir: __dirname + '/public/views/layouts/',
 }));
 app.set('view engine', 'handlebars');
 
