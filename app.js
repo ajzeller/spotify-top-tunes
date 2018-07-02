@@ -45,13 +45,13 @@ app.use(express.static(__dirname + '/public'))
    .use(cookieParser())
    .use(bodyParser.json());
 
-app.set('views', __dirname + '/public/views/');
-app.engine('handlebars', exphbs({
-  defaultLayout: 'main',
-  extname: '.handlebars',
-  layoutsDir: __dirname + '/public/views/layouts/',
-}));
-app.set('view engine', 'handlebars');
+// app.set('views', __dirname + '/public/views/');
+// app.engine('handlebars', exphbs({
+//   defaultLayout: 'main',
+//   extname: '.handlebars',
+//   layoutsDir: __dirname + '/public/views/layouts/',
+// }));
+// app.set('view engine', 'handlebars');
 
 if(process.env.NODE_ENV === 'development') {
   var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
@@ -61,9 +61,9 @@ if(process.env.NODE_ENV === 'production') {
   var redirect_uri = 'https://lit-waters-66227.herokuapp.com/callback'; // Your redirect uri
 }
 
-app.get('/', function (req, res) {
-    res.render('home');
-});
+// app.get('/', function (req, res) {
+//     res.render('home');
+// });
 
 app.get('/login', function(req, res) {
 
