@@ -122,6 +122,7 @@ pre {
     border: 0.5px solid $grey-border;
     background-color: $white;
     outline: none;
+    padding: 0.3rem 0.6rem;
 
 
     &:hover {
@@ -382,6 +383,8 @@ pre {
       .track {
         color: $white;
         font-weight: $medium-weight;
+
+
       }
       .artist {
         line-height: 1em;
@@ -390,10 +393,6 @@ pre {
           color: $grey-border;
           font-weight: lighter;
           font-size: 0.8em;
-
-          .name-mobile {
-            display: none;
-          }
 
           &:after {
               content: ',';
@@ -413,6 +412,10 @@ pre {
     }
   }
 
+}
+
+.name-mobile {
+  display: none;
 }
 
 .hero {
@@ -539,6 +542,10 @@ pre {
 
      .name-desktop {
        display: none;
+     }
+
+     .name-mobile {
+       display: block;
      }
 
    }

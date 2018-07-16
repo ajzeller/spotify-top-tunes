@@ -69,7 +69,8 @@ pre {
 .btn-group .btn {
   border: 0.5px solid #ddd;
   background-color: #fff;
-  outline: none; }
+  outline: none;
+  padding: 0.3rem 0.6rem; }
 
 .btn-group .btn:hover {
   border: 0.5px solid #8212E2;
@@ -271,9 +272,6 @@ pre {
   font-weight: lighter;
   font-size: 0.8em; }
 
-.track-list-wrapper .track-list-item .track-info .artist .artist-name .name-mobile {
-  display: none; }
-
 .track-list-wrapper .track-list-item .track-info .artist .artist-name:after {
   content: ','; }
 
@@ -282,6 +280,9 @@ pre {
 
 .track-list-wrapper .track-list-item .spotify-link a {
   color: #7F7F7F; }
+
+.name-mobile {
+  display: none; }
 
 .hero {
   margin: 100px auto;
@@ -346,6 +347,8 @@ pre {
     margin: 0px;
     padding: 0px; }
   .name-desktop {
-    display: none; } }
+    display: none; }
+  .name-mobile {
+    display: block; } }
 
 /* Extra Small Devices, Phones */
