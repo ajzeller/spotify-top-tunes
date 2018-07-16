@@ -127,27 +127,28 @@ pre {
 
     &:hover {
       // background-color: $white-lilac;
-      border: 0.5px solid $theme-purple;
-      background-color: #FAF4FE;
+      border: 1px solid $spotify-button-border;
+      background-color: $spotify-button-border;
 
     }
 
   }
 
   .btn-outline-primary {
-    color: $black-text;
+    color: $white;
     font-weight: lighter;
     font-size: 0.8em;
-    box-shadow: 0px 5px 30px rgba(255, 255, 255, 0.1);
-
+    // box-shadow: 0px 5px 30px rgba(255, 255, 255, 0.1);
+    background-color: $black-background;
+    border: 1px solid $dark-border;
 
   }
 
   .btn-outline-primary:not(:disabled):not(.disabled).active {
-    background-color: $theme-purple;
+    background-color: $spotify-green;
     // background-color: rgba(153, 43, 244, 0.05);
 
-    border: 0.5px solid $theme-purple;
+    border: 1px solid $spotify-button-border;
     color: $white;
 
     &:focus {
@@ -409,6 +410,7 @@ pre {
 
     .spotify-link a {
       color: $grey-text;
+      font-size: 0.8em;
     }
   }
 

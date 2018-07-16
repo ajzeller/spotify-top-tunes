@@ -73,18 +73,19 @@ pre {
   padding: 0.3rem 0.6rem; }
 
 .btn-group .btn:hover {
-  border: 0.5px solid #8212E2;
-  background-color: #FAF4FE; }
+  border: 1px solid #1AA34A;
+  background-color: #1AA34A; }
 
 .btn-group .btn-outline-primary {
-  color: #4A4A4A;
+  color: #fff;
   font-weight: lighter;
   font-size: 0.8em;
-  box-shadow: 0px 5px 30px rgba(255, 255, 255, 0.1); }
+  background-color: #181818;
+  border: 1px solid #282828; }
 
 .btn-group .btn-outline-primary:not(:disabled):not(.disabled).active {
-  background-color: #8212E2;
-  border: 0.5px solid #8212E2;
+  background-color: #1DB954;
+  border: 1px solid #1AA34A;
   color: #fff; }
 
 .btn-group .btn-outline-primary:not(:disabled):not(.disabled).active:focus {
@@ -279,7 +280,8 @@ pre {
   content: ''; }
 
 .track-list-wrapper .track-list-item .spotify-link a {
-  color: #7F7F7F; }
+  color: #7F7F7F;
+  font-size: 0.8em; }
 
 .name-mobile {
   display: none; }
