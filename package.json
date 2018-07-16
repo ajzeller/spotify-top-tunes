@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass --watch authorization_code/public/assets/scss -o authorization_code/public/assets/css"
+    "scss": "node-sass --watch public/assets/css -o public/assets/css"
   },
   "author": "Andrew Zeller",
   "license": "ISC",
@@ -20,6 +20,7 @@
     "querystring": "~0.2.0",
     "request": "~2.83.0",
     "dotenv": "6.0.0",
-    "express-handlebars": "3.0.0"
+    "express-handlebars": "3.0.0",
+    "handlebars": "4.0.0"
   }
 }

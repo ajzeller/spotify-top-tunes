@@ -1,10 +1,12 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Example of the Authorization Code flow with Spotify</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+    <title>Spotify top tunes</title>
     <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/main.css">
     <style type="text/css">
       #login, #loggedin {
@@ -21,17 +23,48 @@
 
   <body>
 
-    <img class="logo" src="assets/images/logo.svg" />
-    <div class="container">
+<nav class="navbar navbar-expand-lg navbar-dark navbar-transparent">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+        <img src="/assets/images/logo.svg" class="image--brand"/>
+        <div class="text--brand">
+            <span class="bold">tune</span><span class="regular">lytics</span>
+        </div>
+    </a>
+
+
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon hamburger">
+
+      </span>
+    </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#about">about</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link nav-link--emphasis" href="#contact">contact</a>
+      </li>
+    </ul>
+  </div>
+
+  </div>
+</nav>
+
+
+    <!-- <img class="logo" src="assets/images/logo.svg" /> -->
+    <div class="container container--full-width">
       <div id="login">
-        <h1>This is an example of the Authorization Code flow</h1>
-        <a href="/login" class="btn btn-primary">Log in with Spotify</a>
+        <h1>Your top artists and tracks over time</h1>
+        <a href="/login" class="btn btn-primary btn-spotify">Connect with Spotify</a>
       </div>
       <div id="loggedin">
-        <div id="user-profile">
+        <!-- <div id="user-profile">
         </div>
         <div id="oauth">
-        </div>
+        </div> -->
         <!-- <button class="btn btn-default" id="obtain-new-token">Obtain new token using the refresh token</button> -->
 
         <!-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -58,12 +91,12 @@
 
 
     <script id="user-profile-template" type="text/x-handlebars-template">
-    <h1>Logged in as {{display_name}}</h1>
+    <h1>Hey there {{display_name}}!</h1>
     <div class="media">
     <div class="pull-left">
-      <img class="media-object" width="150" src="{{images.0.url}}" />
+      <img class="media-object image-profile" width="150" src="{{images.0.url}}" />
     </div>
-    <div class="media-body">
+    <!-- <div class="media-body">
       <dl class="dl-horizontal">
         <dt>Display name</dt><dd class="clearfix">{{display_name}}</dd>
         <dt>Id</dt><dd>{{id}}</dd>
@@ -73,7 +106,7 @@
         <dt>Profile Image</dt><dd class="clearfix"><a href="{{images.0.url}}">{{images.0.url}}</a></dd>
         <dt>Country</dt><dd>{{country}}</dd>
       </dl>
-    </div>
+    </div> -->
     </div>
     </script>
 
@@ -91,28 +124,68 @@
     </script>
 
     <script id="top-tracks-template" type="text/x-handlebars-template">
-    <h2>Top tracks</h2><a href="/login" class="btn btn-primary">Artists</a><a href="/login" class="btn btn-primary">Tracks</a><br />
-    <a href="/login" class="btn btn-primary">All time</a><a href="/login" class="btn btn-primary">6 months</a><a href="/login" class="btn btn-primary">Recent</a>
-    <dl class="dl-horizontal">
-    <dt>total</dt><dd class="text-overflow">{{total}}</dd>
-    <dt>#1</dt><dd class="text-overflow">{{items.0.name}}</dd>
-    </dl>
-    <hr />
-    {{#each items}}
-    <ul>
-      <li><span class="track-name">{{this.name}}</span> {{#each this.artists}} <span class="artist-name">{{this.name}}</span> {{/each}} <img class="album-artwork" src="{{this.album.images.0.url}}" /></li>
-    </ul>
-    {{/each}}
+      <div class="filter-button-wrapper">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-outline-primary btn-long" id="" >
+            <input type="radio" name="options" autocomplete="off" on-click="all_time()"> All time
+          </label>
+          <label class="btn btn-outline-primary btn-medium">
+            <input type="radio" name="options" id="option2" autocomplete="off"> 6 months
+          </label>
+          <label class="btn btn-outline-primary active btn-short active">
+            <input type="radio" name="options" id="option3" autocomplete="off" checked> Recent
+          </label>
+        </div>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-outline-primary btn-artists">
+            <input type="radio" name="options" id="option1" autocomplete="off" > Artists
+          </label>
+          <label class="btn btn-outline-primary active btn-tracks active">
+            <input type="radio" name="options" id="option2" autocomplete="off" checked > Tracks
+          </label>
+        </div>
+      </div>
+      <!-- <a href="#" class="btn btn-outline-primary btn-artists">Artists</a><a href="#" class="btn btn-outline-primary active btn-tracks">Tracks</a><br /> -->
+      <!-- <a href="#" class="btn btn-outline-primary btn-long">All time</a><a href="#" class="btn btn-outline-primary btn-medium">6 months</a><a href="#" class="btn btn-outline-primary active btn-short">Recent</a> -->
+
+      <div class="track-list-wrapper">
+        {{#each items}}
+        <div class="track-list-item">
+
+            <div class="album-cover">
+              <div class="top-left">{{inc @index}} </div>
+              <img class="album-artwork" src="{{this.album.images.0.url}}" />
+            </div>
+            <div class="track-info">
+              <div class="track">
+                {{truncate this.name 30}}
+              </div>
+              <div class="artist">
+                {{#each this.artists}}
+                <span class="artist-name">{{this.name}}</span>
+                  <!-- {{truncate this.name 20}} -->
+                {{/each}}
+              </div>
+            </div>
+            <div class="spotify-link"><a href="{{this.external_urls.spotify}}"><i class="fas fa-play"></i></a></div>
+
+
+
+            <!-- <span class="track-name"> </span>  <span class="artist-name"></span> -->
+        </div>
+        {{/each}}
+      </div>
+
 
     </script>
 
 
-
-
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
     <!-- <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-    <script src="/jquery/dist/jquery.min.js"></script>
     <script src="/assets/js/main.js"></script>
 
   </body>
