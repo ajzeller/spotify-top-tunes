@@ -115,16 +115,18 @@ pre {
 
 .btn-group {
   text-transform: uppercase;
-
+  margin: auto;
 
   .btn {
     border: 0.5px solid $grey-border;
     background-color: $white;
     outline: none;
 
+
     &:hover {
       // background-color: $white-lilac;
       border: 0.5px solid $theme-purple;
+      background-color: #FAF4FE;
 
     }
 
@@ -134,15 +136,17 @@ pre {
     color: $black-text;
     font-weight: lighter;
     font-size: 0.8em;
+    box-shadow: 0px 5px 30px rgba(255, 255, 255, 0.1);
 
 
   }
 
   .btn-outline-primary:not(:disabled):not(.disabled).active {
-    background-color: #FAF4FE;
+    background-color: $theme-purple;
     // background-color: rgba(153, 43, 244, 0.05);
+
     border: 0.5px solid $theme-purple;
-    color: $black-text;
+    color: $white;
 
     &:focus {
       outline: none;
@@ -164,7 +168,10 @@ pre {
 }
 
 .filter-button-wrapper {
+  width: 100%;
+  padding: 5px;
   display: grid;
+  grid-gap: 0.1em;
   grid-template-columns: 6fr 4fr;
   justify-items: center;
   margin: 0px auto 20px auto;
@@ -344,15 +351,18 @@ pre {
       .top-left {
         font-size: 0.9em;
         position: absolute;
-        top: 0.1em;
-        left: 0.1em;
+        top: 0em;
+        left: 0em;
         background-color: $white;
         border-radius: 0 0 1em 0;
+        border-right: 1px solid $grey-border;
+        border-bottom: 1px solid $grey-border;
         color: $black-text;
         min-width: 1.5em;
         height: 1.5em;
         text-align: right;
         padding: 0 0.3em 0 0;
+        box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
       }
 
       .album-artwork {
@@ -379,6 +389,10 @@ pre {
           color: $grey-border;
           font-weight: lighter;
           font-size: 0.8em;
+
+          .name-mobile {
+            display: none;
+          }
 
           &:after {
               content: ',';
@@ -503,6 +517,15 @@ pre {
        padding: 0px;
      }
 
+     // .filter-button-wrapper {
+     //
+     //   grid-template-columns: 2fr 1fr;
+     //
+     // }
+
+     .name-desktop {
+       display: none;
+     }
 
    }
 

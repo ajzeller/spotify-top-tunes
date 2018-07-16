@@ -105,7 +105,7 @@ if (refresh_token) {
         }
     });
     $.ajax({
-        url: 'https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=50',
+        url: 'https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=50',
         headers: {
           'Authorization': 'Bearer ' + access_token
         },
@@ -209,7 +209,7 @@ $('.btn-medium').click(function() {
   console.log($(this).attr('class')+" button was clicked");
 
   $.ajax({
-      url: 'https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=50',
+      url: 'https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=50',
       headers: {
         'Authorization': 'Bearer ' + access_token
       },

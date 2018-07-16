@@ -65,7 +65,8 @@ pre {
   background-color: #E9E6E9; }
 
 .btn-group {
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  margin: auto; }
 
 .btn-group .btn {
   border: 0.5px solid #ddd;
@@ -73,17 +74,19 @@ pre {
   outline: none; }
 
 .btn-group .btn:hover {
-  border: 0.5px solid #8212E2; }
+  border: 0.5px solid #8212E2;
+  background-color: #FAF4FE; }
 
 .btn-group .btn-outline-primary {
   color: #4A4A4A;
   font-weight: lighter;
-  font-size: 0.8em; }
+  font-size: 0.8em;
+  box-shadow: 0px 5px 30px rgba(255, 255, 255, 0.1); }
 
 .btn-group .btn-outline-primary:not(:disabled):not(.disabled).active {
-  background-color: #FAF4FE;
+  background-color: #8212E2;
   border: 0.5px solid #8212E2;
-  color: #4A4A4A; }
+  color: #fff; }
 
 .btn-group .btn-outline-primary:not(:disabled):not(.disabled).active:focus {
   outline: none;
@@ -96,7 +99,10 @@ pre {
   border-radius: 0 100px 100px 0; }
 
 .filter-button-wrapper {
+  width: 100%;
+  padding: 5px;
   display: grid;
+  grid-gap: 0.1em;
   grid-template-columns: 6fr 4fr;
   justify-items: center;
   margin: 0px auto 20px auto; }
@@ -231,15 +237,18 @@ pre {
 .track-list-wrapper .track-list-item .album-cover .top-left {
   font-size: 0.9em;
   position: absolute;
-  top: 0.1em;
-  left: 0.1em;
+  top: 0em;
+  left: 0em;
   background-color: #fff;
   border-radius: 0 0 1em 0;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
   color: #4A4A4A;
   min-width: 1.5em;
   height: 1.5em;
   text-align: right;
-  padding: 0 0.3em 0 0; }
+  padding: 0 0.3em 0 0;
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1); }
 
 .track-list-wrapper .track-list-item .album-cover .album-artwork {
   height: 60px;
@@ -263,6 +272,9 @@ pre {
   color: #ddd;
   font-weight: lighter;
   font-size: 0.8em; }
+
+.track-list-wrapper .track-list-item .track-info .artist .artist-name .name-mobile {
+  display: none; }
 
 .track-list-wrapper .track-list-item .track-info .artist .artist-name:after {
   content: ','; }
@@ -324,6 +336,8 @@ pre {
   .container {
     width: 100%;
     margin: 0px;
-    padding: 0px; } }
+    padding: 0px; }
+  .name-desktop {
+    display: none; } }
 
 /* Extra Small Devices, Phones */
