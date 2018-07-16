@@ -44,13 +44,14 @@ pre {
   float: left; }
 
 .btn-spotify {
+  display: inline-block;
   font-size: 1rem;
   background-color: #1DB954;
   border: 1px solid #1AA34A;
   border-radius: 500px;
   text-transform: uppercase;
   padding: 10px 30px;
-  margin: 50px 0 0 0;
+  margin: 50px auto 0 auto;
   letter-spacing: 2px;
   font-weight: 600;
   vertical-align: middle;
@@ -58,9 +59,6 @@ pre {
 
 .btn-spotify:hover {
   background-color: #1AA34A; }
-
-.btn:hover {
-  background-color: #E9E6E9; }
 
 .btn-group {
   text-transform: uppercase;
@@ -72,16 +70,16 @@ pre {
   outline: none;
   padding: 0.3rem 0.6rem; }
 
-.btn-group .btn:hover {
-  border: 1px solid #1AA34A;
-  background-color: #1AA34A; }
-
 .btn-group .btn-outline-primary {
   color: #fff;
   font-weight: lighter;
   font-size: 0.8em;
   background-color: #181818;
   border: 1px solid #282828; }
+
+.btn-group .btn-outline-primary:hover {
+  border: 1px solid #1AA34A;
+  background-color: #1AA34A; }
 
 .btn-group .btn-outline-primary:not(:disabled):not(.disabled).active {
   background-color: #1DB954;
@@ -288,13 +286,21 @@ pre {
 
 .hero {
   margin: 100px auto;
-  width: 80%; }
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center; }
 
 .hero h1 {
   font-size: 2.7em;
   line-height: 1.5em;
   font-weight: lighter;
   text-align: center; }
+
+.container--full-width {
+  max-width: 800px;
+  margin: auto;
+  padding: 0px; }
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 767px) {
@@ -344,7 +350,7 @@ pre {
     width: 80%; }
   .btn-spotify {
     width: 100%; }
-  .container {
+  .container--full-width {
     width: 100%;
     margin: 0px;
     padding: 0px; }
