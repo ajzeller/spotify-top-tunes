@@ -30,24 +30,10 @@ Handlebars.registerHelper("truncate", function(value, desired_length)
 });
 
 
-var api_response = {
-  "items": [
-    {
-      "name": "track0"
-    },
-    {
-      "name": "track1"
-    }
-
-  ]
-};
-
-
-
 // var testTemplateSource = document.getElementById('test-template').innerHTML,
 //     testTemplate = Handlebars.compile(testTemplateSource),
 //     testTemplatePlaceholder = document.getElementById('testTemplate');
-console.log(api_response);
+// console.log(api_response);
 // testTemplatePlaceholder.innerHTML = testTemplate(api_response);
 var userProfileSource = document.getElementById('user-profile-template').innerHTML, // handlebars gets template
     userProfileTemplate = Handlebars.compile(userProfileSource); // handlebars compiles template into function
@@ -105,7 +91,7 @@ if (refresh_token) {
         }
     });
     $.ajax({
-        url: 'https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=50',
+        url: 'https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=50',
         headers: {
           'Authorization': 'Bearer ' + access_token
         },
@@ -119,6 +105,41 @@ if (refresh_token) {
     }).done(function() {
       console.log('done');
 
+      $('.btn-long').click(function() {
+        console.log($(this).attr('class')+" button was clicked");
+
+        $.ajax({
+            url: 'https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=50',
+            headers: {
+              'Authorization': 'Bearer ' + access_token
+            },
+            success: function(response) {
+              document.getElementById('topTracks').innerHTML = topTracksTemplate(response);
+              console.log(response);
+              $('#login').hide();
+              $('#loggedin').show();
+            }
+        });
+        $(this).toggleClass('active');
+      });
+
+      $('.btn-medium').click(function() {
+        console.log($(this).attr('class')+" button was clicked");
+
+        $.ajax({
+            url: 'https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=50',
+            headers: {
+              'Authorization': 'Bearer ' + access_token
+            },
+            success: function(response) {
+              document.getElementById('topTracks').innerHTML = topTracksTemplate(response);
+              console.log(response);
+              $('#login').hide();
+              $('#loggedin').show();
+            }
+        });
+        $(this).toggleClass('active');
+      });
 
 
 
@@ -187,41 +208,7 @@ if (refresh_token) {
 
 console.log('outside of if loop');
 
-$('.btn-long').click(function() {
-  console.log($(this).attr('class')+" button was clicked");
 
-  $.ajax({
-      url: 'https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=50',
-      headers: {
-        'Authorization': 'Bearer ' + access_token
-      },
-      success: function(response) {
-        document.getElementById('topTracks').innerHTML = topTracksTemplate(response);
-        console.log(response);
-        $('#login').hide();
-        $('#loggedin').show();
-      }
-  });
-  $(this).toggleClass('active');
-});
-
-$('.btn-medium').click(function() {
-  console.log($(this).attr('class')+" button was clicked");
-
-  $.ajax({
-      url: 'https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=50',
-      headers: {
-        'Authorization': 'Bearer ' + access_token
-      },
-      success: function(response) {
-        document.getElementById('topTracks').innerHTML = topTracksTemplate(response);
-        console.log(response);
-        $('#login').hide();
-        $('#loggedin').show();
-      }
-  });
-  $(this).toggleClass('active');
-});
 
 // document.getElementById('btn-long').addEventListener('click', function() {
 //

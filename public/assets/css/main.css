@@ -4,7 +4,7 @@ html {
 body {
   background-color: #181818;
   font-family: 'Open Sans', sans-serif;
-  font-size: 0.9em;
+  font-size: 0.9rem;
   color: #fff; }
 
 h5 {
@@ -73,34 +73,30 @@ pre {
 .btn-group .btn-outline-primary {
   color: #fff;
   font-weight: lighter;
-  font-size: 0.8em;
+  font-size: 0.7rem;
   background-color: #181818;
-  border: 1px solid #282828; }
+  border: 1px solid #282828;
+  border-bottom: 3px solid #282828; }
 
 .btn-group .btn-outline-primary:hover {
-  border: 1px solid #1AA34A;
-  background-color: #1AA34A; }
+  border: 1px solid #282828;
+  border-bottom: 3px solid #1AA34A; }
 
 .btn-group .btn-outline-primary:not(:disabled):not(.disabled).active {
-  background-color: #1DB954;
-  border: 1px solid #1AA34A;
+  background-color: #181818;
+  border: 1px solid #282828;
+  border-bottom: 3px solid #1AA34A;
   color: #fff; }
 
 .btn-group .btn-outline-primary:not(:disabled):not(.disabled).active:focus {
   outline: none;
   box-shadow: none; }
 
-.btn-group .btn-long, .btn-group .btn-artists {
-  border-radius: 100px 0 0 100px; }
-
-.btn-group .btn-short, .btn-group .btn-tracks {
-  border-radius: 0 100px 100px 0; }
-
 .filter-button-wrapper {
   width: 100%;
   padding: 5px;
   display: grid;
-  grid-gap: 0.1em;
+  grid-gap: 0.1rem;
   grid-template-columns: 6fr 4fr;
   justify-items: center;
   margin: 0px auto 20px auto; }
@@ -233,17 +229,17 @@ pre {
   position: relative; }
 
 .track-list-wrapper .track-list-item .album-cover .top-left {
-  font-size: 0.9em;
+  font-size: 0.9rem;
   position: absolute;
   top: 0em;
   left: 0em;
   background-color: #fff;
-  border-radius: 0 0 1em 0;
+  border-radius: 0 0 1rem 0;
   border-right: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   color: #4A4A4A;
-  min-width: 1.5em;
-  height: 1.5em;
+  min-width: 1.5rem;
+  height: 1.5rem;
   text-align: right;
   padding: 0 0.3em 0 0;
   box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1); }
@@ -264,12 +260,12 @@ pre {
   font-weight: 400; }
 
 .track-list-wrapper .track-list-item .track-info .artist {
-  line-height: 1em; }
+  line-height: 1rem; }
 
 .track-list-wrapper .track-list-item .track-info .artist .artist-name {
   color: #ddd;
   font-weight: lighter;
-  font-size: 0.8em; }
+  font-size: 0.8rem; }
 
 .track-list-wrapper .track-list-item .track-info .artist .artist-name:after {
   content: ','; }
@@ -279,7 +275,7 @@ pre {
 
 .track-list-wrapper .track-list-item .spotify-link a {
   color: #7F7F7F;
-  font-size: 0.8em; }
+  font-size: 0.8rem; }
 
 .name-mobile {
   display: none; }
@@ -292,8 +288,8 @@ pre {
   justify-items: center; }
 
 .hero h1 {
-  font-size: 2.7em;
-  line-height: 1.5em;
+  font-size: 2.7rem;
+  line-height: 1.5rem;
   font-weight: lighter;
   text-align: center; }
 

@@ -28,7 +28,7 @@ html {
 body {
   background-color: $black-background;
   font-family: 'Open Sans', sans-serif;
-  font-size: 0.9em;
+  font-size: 0.9rem;
   color: $white;
 }
 
@@ -130,27 +130,28 @@ pre {
   .btn-outline-primary {
     color: $white;
     font-weight: lighter;
-    font-size: 0.8em;
+    font-size: 0.7rem;
     // box-shadow: 0px 5px 30px rgba(255, 255, 255, 0.1);
     background-color: $black-background;
     border: 1px solid $dark-border;
-
+    border-bottom: 3px solid $dark-border;
     &:hover {
       // background-color: $white-lilac;
-      border: 1px solid $spotify-button-border;
-      background-color: $spotify-button-border;
-
+      // border: 1px solid $spotify-button-border;
+      // background-color: $spotify-button-border;
+      // border: none;
+      border: 1px solid $dark-border;
+      border-bottom: 3px solid $spotify-button-border;
     }
 
   }
 
   .btn-outline-primary:not(:disabled):not(.disabled).active {
-    background-color: $spotify-green;
+    background-color: $black-background;
     // background-color: rgba(153, 43, 244, 0.05);
-
-    border: 1px solid $spotify-button-border;
+    border: 1px solid $dark-border;
+    border-bottom: 3px solid $spotify-button-border;
     color: $white;
-
     &:focus {
       outline: none;
       box-shadow: none;
@@ -159,11 +160,13 @@ pre {
   }
 
   .btn-long, .btn-artists {
-    border-radius: 100px 0 0 100px;
+    // border-radius: 0;
+    // border-radius: 0.3rem 0 0 0.3rem;
   }
 
   .btn-short, .btn-tracks {
-    border-radius: 0 100px 100px 0;
+    // border-radius: 0;
+    // border-radius: 0 0.3rem 0.3rem 0;
   }
 
 
@@ -174,7 +177,7 @@ pre {
   width: 100%;
   padding: 5px;
   display: grid;
-  grid-gap: 0.1em;
+  grid-gap: 0.1rem;
   grid-template-columns: 6fr 4fr;
   justify-items: center;
   margin: 0px auto 20px auto;
@@ -352,17 +355,17 @@ pre {
       position: relative;
 
       .top-left {
-        font-size: 0.9em;
+        font-size: 0.9rem;
         position: absolute;
         top: 0em;
         left: 0em;
         background-color: $white;
-        border-radius: 0 0 1em 0;
+        border-radius: 0 0 1rem 0;
         border-right: 1px solid $grey-border;
         border-bottom: 1px solid $grey-border;
         color: $black-text;
-        min-width: 1.5em;
-        height: 1.5em;
+        min-width: 1.5rem;
+        height: 1.5rem;
         text-align: right;
         padding: 0 0.3em 0 0;
         box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
@@ -388,12 +391,12 @@ pre {
 
       }
       .artist {
-        line-height: 1em;
+        line-height: 1rem;
 
         .artist-name {
           color: $grey-border;
           font-weight: lighter;
-          font-size: 0.8em;
+          font-size: 0.8rem;
 
           &:after {
               content: ',';
@@ -410,7 +413,7 @@ pre {
 
     .spotify-link a {
       color: $grey-text;
-      font-size: 0.8em;
+      font-size: 0.8rem;
     }
   }
 
@@ -428,8 +431,8 @@ pre {
   justify-items: center;
 
   h1 {
-    font-size: 2.7em;
-    line-height: 1.5em;
+    font-size: 2.7rem;
+    line-height: 1.5rem;
     font-weight: lighter;
     text-align: center;
   }
