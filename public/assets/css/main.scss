@@ -12,8 +12,11 @@ $white-lilac: #E9E6E9;
 $theme-purple: #8212E2;
 $grey-border: #ddd;
 $black-text: #4A4A4A;
-$black-background: #181818;
+$black-background: #121212;
+$black-transparent: rgba(0,0,0,0.5);
+$lighter-black-background: #181818;
 $dark-border: #282828;
+$blue: #4988D4;
 
 // Font weights
 
@@ -217,6 +220,7 @@ label:focus {
     height: 3rem;
     display: flex;
     align-items: center;
+    color: $white-hov;
 
     a {
       color: $black;
@@ -228,10 +232,12 @@ label:focus {
 
       &:hover {
         transform: translateY(-2px);
-
-
       }
+    }
 
+    &:hover {
+      color: $white;
+      cursor: pointer;
     }
 
   }
@@ -245,7 +251,14 @@ label:focus {
   }
 
   .fas {
-    color: $white;
+    font-size: 1.3rem;
+    margin: 0.7rem;
+    // color: $white-hov;
+
+    // &:hover {
+    //   color: $white;
+    //   cursor: pointer;
+    // }
   }
 
 }
@@ -337,10 +350,13 @@ label:focus {
 
 .navbar-toggler {
   border: none;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-dark .navbar-toggler-icon {
   background-image: url("../images/chevron-down.svg");
+  float: right;
 }
 
 .image--brand {
@@ -361,9 +377,12 @@ label:focus {
   border-radius: 50%;
   box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
   width: 40px;
+  margin: 0 0.5rem 0 0;
+  float: left;
 }
 
 .track-list-wrapper {
+  // border-radius: 0.5rem;
   // margin: 20px auto;
   display: grid;
   // grid-template-rows: 1fr;
@@ -372,11 +391,12 @@ label:focus {
   // grid-template-areas: "track"
   //                      "footer";
   .track-list-item {
-
+    background-color: $lighter-black-background;
     min-height: 60px;
     display: grid;
-    grid-template-columns: 60px 1fr 20px;
-    border-top: 0.5px solid $dark-border;
+    grid-template-columns: 60px 1fr 30px;
+    border: 0.5px solid $dark-border;
+    border-bottom: none;
     align-items: center;
 
     .album-cover {
@@ -384,19 +404,20 @@ label:focus {
 
       .top-left {
         font-size: 0.9rem;
+        font-weight: lighter;
         position: absolute;
         top: 0em;
         left: 0em;
-        background-color: $white;
+        background-color: $black-transparent;
         border-radius: 0 0 1rem 0;
-        border-right: 1px solid $grey-border;
-        border-bottom: 1px solid $grey-border;
-        color: $black-text;
+        // border-right: 1px solid $lighter-black-background;
+        // border-bottom: 1px solid $lighter-black-background;
+        color: $white;
         min-width: 1.5rem;
         height: 1.5rem;
         text-align: right;
         padding: 0 0.3em 0 0;
-        box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.2);
       }
 
       .album-artwork {
@@ -466,7 +487,7 @@ label:focus {
 }
 
 .container--full-width {
-  max-width: 800px;
+  // max-width: 800px;
   margin: auto;
   padding: 0px;
 }
@@ -587,6 +608,12 @@ label:focus {
      .name-mobile {
        display: block;
      }
+
+      #image-profile-desktop {
+            display: none;
+      }
+
+
 
    }
 

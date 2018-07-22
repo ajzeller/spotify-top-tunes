@@ -2,7 +2,7 @@ html {
   height: 100%; }
 
 body {
-  background-color: #181818;
+  background-color: #121212;
   font-family: 'Open Sans', sans-serif;
   font-size: 0.9rem;
   color: #fff; }
@@ -86,7 +86,7 @@ label:focus {
   color: #fff;
   font-weight: lighter;
   font-size: 0.7rem;
-  background-color: #181818;
+  background-color: #121212;
   border: 1px solid #282828;
   border-bottom: 3px solid #282828;
   text-transform: uppercase; }
@@ -100,7 +100,7 @@ label:focus {
   box-shadow: none !important; }
 
 .btn-group .btn-outline-primary:not(:disabled):not(.disabled).active {
-  background-color: #181818;
+  background-color: #121212;
   border: 1px solid #282828;
   border-bottom: 3px solid #1AA34A;
   color: #fff; }
@@ -131,7 +131,8 @@ label:focus {
   margin-left: 0.75rem;
   height: 3rem;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  color: rgba(255, 255, 255, 0.7); }
 
 .navbar li a {
   color: #24292E;
@@ -144,11 +145,16 @@ label:focus {
 .navbar li a:hover {
   transform: translateY(-2px); }
 
+.navbar li:hover {
+  color: #fff;
+  cursor: pointer; }
+
 .navbar .navbar-transparent {
   background-color: #E9E6E9; }
 
 .navbar .fas {
-  color: #fff; }
+  font-size: 1.3rem;
+  margin: 0.7rem; }
 
 .navbar-brand {
   font-size: 1.75rem;
@@ -224,10 +230,13 @@ label:focus {
   transform-origin: left center; }
 
 .navbar-toggler {
-  border: none; }
+  border: none;
+  display: flex;
+  align-items: center; }
 
 .navbar-dark .navbar-toggler-icon {
-  background-image: url("../images/chevron-down.svg"); }
+  background-image: url("../images/chevron-down.svg");
+  float: right; }
 
 .image--brand {
   float: left;
@@ -242,17 +251,21 @@ label:focus {
 .image-profile {
   border-radius: 50%;
   box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
-  width: 40px; }
+  width: 40px;
+  margin: 0 0.5rem 0 0;
+  float: left; }
 
 .track-list-wrapper {
   display: grid;
   grid-template-columns: 1fr; }
 
 .track-list-wrapper .track-list-item {
+  background-color: #181818;
   min-height: 60px;
   display: grid;
-  grid-template-columns: 60px 1fr 20px;
-  border-top: 0.5px solid #282828;
+  grid-template-columns: 60px 1fr 30px;
+  border: 0.5px solid #282828;
+  border-bottom: none;
   align-items: center; }
 
 .track-list-wrapper .track-list-item .album-cover {
@@ -260,19 +273,18 @@ label:focus {
 
 .track-list-wrapper .track-list-item .album-cover .top-left {
   font-size: 0.9rem;
+  font-weight: lighter;
   position: absolute;
   top: 0em;
   left: 0em;
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 0 0 1rem 0;
-  border-right: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  color: #4A4A4A;
+  color: #fff;
   min-width: 1.5rem;
   height: 1.5rem;
   text-align: right;
   padding: 0 0.3em 0 0;
-  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1); }
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.2); }
 
 .track-list-wrapper .track-list-item .album-cover .album-artwork {
   height: 60px;
@@ -323,7 +335,6 @@ label:focus {
   text-align: center; }
 
 .container--full-width {
-  max-width: 800px;
   margin: auto;
   padding: 0px; }
 
@@ -382,6 +393,8 @@ label:focus {
   .name-desktop {
     display: none; }
   .name-mobile {
-    display: block; } }
+    display: block; }
+  #image-profile-desktop {
+    display: none; } }
 
 /* Extra Small Devices, Phones */

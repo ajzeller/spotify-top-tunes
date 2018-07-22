@@ -39,6 +39,7 @@ var artistsLong;
 var listType = "tracks";
 
 function all_time_clicked() {
+  // $(this).toggleClass("newClass");
   console.log("all time was clicked");
 
   $.ajax({
@@ -66,7 +67,8 @@ function all_time_clicked() {
         }
     });
   });
-$(this).toggleClass('active');
+
+
 
 }
 
@@ -98,7 +100,7 @@ function medium_clicked() {
         }
     });
   });
-$(this).toggleClass('active');
+// $(this).toggleClass('active');
 
 }
 
@@ -130,7 +132,7 @@ function recent_clicked() {
         }
     });
   });
-$(this).toggleClass('active');
+// $(this).toggleClass('active');
 }
 
 
@@ -147,6 +149,9 @@ var topTracksSource = document.getElementById('top-tracks-template').innerHTML,
     topTracksTemplate = Handlebars.compile(topTracksSource);
     // topTracksPlaceholder = document.getElementById('topTracks');
 // var params = getHashParams();
+
+var navbarSource = document.getElementById('navbar-Template').innerHTML,
+    navbarTemplate = Handlebars.compile(navbarSource);
 
 // var access_token = params.access_token,
 //     refresh_token = params.refresh_token,
@@ -196,7 +201,7 @@ function updateClick(){
 
 
 if (refresh_token) {
-  // if refresh token cookie exists, check if the topMedia request has been made and saved as cookies
+  // if refresh token cookie exists, display the default views
 
   $.ajax({
     url: '/refresh_token',
@@ -221,7 +226,8 @@ if (refresh_token) {
           'Authorization': 'Bearer ' + access_token
         },
         success: function(response) {
-          document.getElementById('user-profile').innerHTML = userProfileTemplate(response); // handlebars inserts response into function
+          // document.getElementById('user-profile').innerHTML = userProfileTemplate(response); // handlebars inserts response into function
+          document.getElementById('navbarTemplate').innerHTML = navbarTemplate(response); // handlebars inserts response into function
           userProfile = response;
           console.log(userProfile);
           // console.log(response);
@@ -234,7 +240,7 @@ if (refresh_token) {
     });
 
     $.ajax({
-        url: 'https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=20',
+        url: 'https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=50',
         headers: {
           'Authorization': 'Bearer ' + access_token
         },
@@ -248,22 +254,10 @@ if (refresh_token) {
         }
     });
 
-    $.ajax({
-        url: 'https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=50',
-        headers: {
-          'Authorization': 'Bearer ' + access_token
-        },
-        success: function(response) {
-          // console.log(response);
-          // document.getElementById('topTracks').innerHTML = topTracksTemplate(response);
-          Cookies.set('tracksMedium', response);
-        }
-    });
-
   });
 
 
-  if(!response_preloaded) {
+  if(false) {
     // if topMedia hasn't been requested, request and save as cookies
 
 
