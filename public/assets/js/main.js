@@ -36,10 +36,45 @@ var tracksLong;
 var artistsShort;
 var artistsMedium;
 var artistsLong;
-var listType = "tracks";
 
-function all_time_clicked() {
-  // $(this).toggleClass("newClass");
+// set intial conditions (Recent, Tracks)
+var listType = "tracks";
+var listDuration = "short";
+
+function media_request(type, range) {
+  console.log( type + ' over ' + range + " was clicked");
+
+  $.ajax({
+    url: '/refresh_token',
+    data: {
+      'refresh_token': refresh_token
+    }
+  }).done(function(data) {
+
+    // console.log(data);
+    var access_token = data.access_token;
+
+    $.ajax({
+        url: 'https://api.spotify.com/v1/me/top/' + listType + '?time_range=' + listDuration + '_term&limit=50',
+        headers: {
+          'Authorization': 'Bearer ' + access_token
+        },
+        success: function(response) {
+          console.log(response);
+          document.getElementById('topTracks').innerHTML = topTracksTemplate(response);
+          $('.btn-' + range).button('toggle');
+          $('.btn-' + type).button('toggle');
+          // let responseJSON = response;
+          // let responseJSON = JSON.stringify(response);
+          // Cookies.set('tracksShort', responseJSON);
+          // console.log(responseJSON);
+        }
+    });
+  });
+}
+
+function long_clicked() {
+
   console.log("all time was clicked");
 
   $.ajax({
@@ -49,7 +84,7 @@ function all_time_clicked() {
     }
   }).done(function(data) {
 
-    console.log(data);
+    // console.log(data);
     var access_token = data.access_token;
 
     $.ajax({
@@ -58,8 +93,9 @@ function all_time_clicked() {
           'Authorization': 'Bearer ' + access_token
         },
         success: function(response) {
-          // console.log(response);
+          console.log(response);
           document.getElementById('topTracks').innerHTML = topTracksTemplate(response);
+          $('.btn-long').button('toggle');
           // let responseJSON = response;
           // let responseJSON = JSON.stringify(response);
           // Cookies.set('tracksShort', responseJSON);
@@ -82,7 +118,7 @@ function medium_clicked() {
     }
   }).done(function(data) {
 
-    console.log(data);
+    // console.log(data);
     var access_token = data.access_token;
 
     $.ajax({
@@ -91,8 +127,9 @@ function medium_clicked() {
           'Authorization': 'Bearer ' + access_token
         },
         success: function(response) {
-          // console.log(response);
+          console.log(response);
           document.getElementById('topTracks').innerHTML = topTracksTemplate(response);
+          $('.btn-medium').button('toggle');
           // let responseJSON = response;
           // let responseJSON = JSON.stringify(response);
           // Cookies.set('tracksShort', responseJSON);
@@ -104,7 +141,7 @@ function medium_clicked() {
 
 }
 
-function recent_clicked() {
+function short_clicked() {
   console.log("recent was clicked");
 
   $.ajax({
@@ -114,7 +151,7 @@ function recent_clicked() {
     }
   }).done(function(data) {
 
-    console.log(data);
+    // console.log(data);
     var access_token = data.access_token;
 
     $.ajax({
@@ -123,8 +160,9 @@ function recent_clicked() {
           'Authorization': 'Bearer ' + access_token
         },
         success: function(response) {
-          // console.log(response);
+          console.log(response);
           document.getElementById('topTracks').innerHTML = topTracksTemplate(response);
+          $('.btn-short').button('toggle');
           // let responseJSON = response;
           // let responseJSON = JSON.stringify(response);
           // Cookies.set('tracksShort', responseJSON);
@@ -240,13 +278,15 @@ if (refresh_token) {
     });
 
     $.ajax({
-        url: 'https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=50',
+        url: 'https://api.spotify.com/v1/me/top/' + listType + '?time_range=' + listDuration + '_term&limit=50',
         headers: {
           'Authorization': 'Bearer ' + access_token
         },
         success: function(response) {
+
           // console.log(response);
           document.getElementById('topTracks').innerHTML = topTracksTemplate(response);
+          $('.btn-' + listDuration).button('toggle');
           let responseJSON = response;
           // let responseJSON = JSON.stringify(response);
           Cookies.set('tracksShort', responseJSON);
