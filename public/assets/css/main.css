@@ -38,6 +38,14 @@ pre {
 .regular {
   font-weight: 300; }
 
+*:focus {
+  outline: 0 !important;
+  box-shadow: none !important; }
+
+label:focus {
+  outline: 0 !important;
+  box-shadow: none !important; }
+
 .logo {
   width: 100px;
   height: auto;
@@ -70,17 +78,26 @@ pre {
   outline: none;
   padding: 0.3rem 0.6rem; }
 
+.btn-group .btn:focus {
+  outline: 0 !important;
+  box-shadow: none !important; }
+
 .btn-group .btn-outline-primary {
   color: #fff;
   font-weight: lighter;
   font-size: 0.7rem;
   background-color: #181818;
   border: 1px solid #282828;
-  border-bottom: 3px solid #282828; }
+  border-bottom: 3px solid #282828;
+  text-transform: uppercase; }
 
 .btn-group .btn-outline-primary:hover {
   border: 1px solid #282828;
   border-bottom: 3px solid #1AA34A; }
+
+.btn-group .btn-outline-primary:focus {
+  outline: 0 !important;
+  box-shadow: none !important; }
 
 .btn-group .btn-outline-primary:not(:disabled):not(.disabled).active {
   background-color: #181818;
@@ -89,8 +106,8 @@ pre {
   color: #fff; }
 
 .btn-group .btn-outline-primary:not(:disabled):not(.disabled).active:focus {
-  outline: none;
-  box-shadow: none; }
+  outline: 0 !important;
+  box-shadow: none !important; }
 
 .filter-button-wrapper {
   width: 100%;
@@ -111,7 +128,10 @@ pre {
   float: right; }
 
 .navbar li {
-  margin-left: 0.75rem; }
+  margin-left: 0.75rem;
+  height: 3rem;
+  display: flex;
+  align-items: center; }
 
 .navbar li a {
   color: #24292E;
@@ -126,6 +146,9 @@ pre {
 
 .navbar .navbar-transparent {
   background-color: #E9E6E9; }
+
+.navbar .fas {
+  color: #fff; }
 
 .navbar-brand {
   font-size: 1.75rem;
@@ -200,6 +223,12 @@ pre {
   -o-transform-origin: left center;
   transform-origin: left center; }
 
+.navbar-toggler {
+  border: none; }
+
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("../images/chevron-down.svg"); }
+
 .image--brand {
   float: left;
   height: 5rem;
@@ -212,7 +241,8 @@ pre {
 
 .image-profile {
   border-radius: 50%;
-  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1); }
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+  width: 40px; }
 
 .track-list-wrapper {
   display: grid;
@@ -289,7 +319,6 @@ pre {
 
 .hero h1 {
   font-size: 2.7rem;
-  line-height: 1.5rem;
   font-weight: lighter;
   text-align: center; }
 

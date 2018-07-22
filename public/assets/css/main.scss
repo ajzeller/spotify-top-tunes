@@ -76,9 +76,15 @@ pre {
   font-weight: $light-weight;
 }
 
+*:focus {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
 
-
-
+label:focus {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
 
 .logo{
   width: 100px;
@@ -122,6 +128,10 @@ pre {
     outline: none;
     padding: 0.3rem 0.6rem;
 
+    &:focus {
+      outline: 0 !important;
+      box-shadow: none !important;
+    }
 
 
 
@@ -135,6 +145,7 @@ pre {
     background-color: $black-background;
     border: 1px solid $dark-border;
     border-bottom: 3px solid $dark-border;
+    text-transform: uppercase;
     &:hover {
       // background-color: $white-lilac;
       // border: 1px solid $spotify-button-border;
@@ -142,6 +153,10 @@ pre {
       // border: none;
       border: 1px solid $dark-border;
       border-bottom: 3px solid $spotify-button-border;
+    }
+    &:focus {
+      outline: 0 !important;
+      box-shadow: none !important;
     }
 
   }
@@ -152,9 +167,10 @@ pre {
     border: 1px solid $dark-border;
     border-bottom: 3px solid $spotify-button-border;
     color: $white;
+
     &:focus {
-      outline: none;
-      box-shadow: none;
+      outline: 0 !important;
+      box-shadow: none !important;
     }
 
   }
@@ -198,6 +214,9 @@ pre {
 
   li {
     margin-left: 0.75rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
 
     a {
       color: $black;
@@ -223,6 +242,10 @@ pre {
 
   .nav-link--emphasis {
     // color: $theme-primary;
+  }
+
+  .fas {
+    color: $white;
   }
 
 }
@@ -312,8 +335,12 @@ pre {
   }
 }
 
-.navbar-toggler-icon {
-  // background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://ww…p='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("../images/chevron-down.svg");
 }
 
 .image--brand {
@@ -333,6 +360,7 @@ pre {
 .image-profile {
   border-radius: 50%;
   box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+  width: 40px;
 }
 
 .track-list-wrapper {
@@ -432,7 +460,6 @@ pre {
 
   h1 {
     font-size: 2.7rem;
-    line-height: 1.5rem;
     font-weight: lighter;
     text-align: center;
   }

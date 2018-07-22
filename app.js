@@ -90,7 +90,7 @@ app.get('/callback', function(req, res) {
   // after checking the state parameter
 
   var code = req.query.code || null;
-  console.log(code)
+  console.log(code);
   var state = req.query.state || null;
   var storedState = req.cookies ? req.cookies[stateKey] : null;
 
@@ -121,22 +121,43 @@ app.get('/callback', function(req, res) {
         var access_token = body.access_token,
             refresh_token = body.refresh_token;
 
-        // var options = {
-        //   url: 'https://api.spotify.com/v1/me/top/tracks',
-        //   headers: { 'Authorization': 'Bearer ' + access_token },
-        //   json: true
-        // };
-        //
-        // // use the access token to access the Spotify Web API
-        // request.get(options, function(error, response, body) {
-        //   console.log(body);
-        // });
+        var options = {
+          url: 'https://api.spotify.com/v1/me/top/tracks',
+          headers: { 'Authorization': 'Bearer ' + access_token },
+          json: true
+        };
+
+        // use the access token to access the Spotify Web API
+        request.get(options, function(error, response, body) {
+          // console.log(body);
+
+        });
+
+
 
         // we can also pass the token to the browser to make requests from there
         res.clearCookie('refresh_token');
         // res.clearCookie('access_token');
         res.cookie('refresh_token', refresh_token, { maxAge: 604800000, httpOnly: false });
+        res.cookie('another cookie', 'some info', { maxAge: 604800000, httpOnly: false });
         // res.cookie('access_token', access_token, { maxAge: 604800000, httpOnly: false });
+
+        options = {
+          url: 'https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=50',
+          headers: { 'Authorization': 'Bearer ' + access_token },
+          json: true
+        };
+
+        // use the access token to access the Spotify Web API
+        var tracksShort;
+
+        request.get(options, function(error, response, body) {
+          tracksShort = body; // res.cookie('tracksShort', body, { maxAge: 604800000, httpOnly: false });
+        });
+
+
+
+
 
         res.redirect('/#');
         // res.redirect('/#' +

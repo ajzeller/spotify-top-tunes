@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
     <style type="text/css">
       #login, #loggedin {
         display: none;
@@ -24,10 +24,14 @@
 
   <body>
 
+    <div id="navbarTemplate">
+
+    </div>
+
 <nav class="navbar navbar-expand-lg navbar-dark navbar-transparent">
   <div class="container">
     <a class="navbar-brand" href="/">
-        <img src="/assets/images/logo.svg" class="image--brand"/>
+        <img src="/assets/images/logo-2.svg" class="image--brand"/>
         <div class="text--brand">
             <span class="regular">my</span><span class="bold">top</span><span class="bold">50</span>
         </div>
@@ -35,9 +39,7 @@
 
 
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon hamburger">
-
-      </span>
+      <span class="navbar-toggler-icon"></span>
     </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -47,6 +49,12 @@
       </li>
       <li class="nav-item ">
         <a class="nav-link nav-link--emphasis" href="#contact">contact</a>
+      </li>
+      <li class="nav-item">
+        <i class="fas fa-sync" onclick="deleteCookies();"></i>
+      </li>
+      <li class="nav-item">
+        <i class="fas fa-sign-out-alt" onclick="signOut();"></i>
       </li>
     </ul>
   </div>
@@ -66,10 +74,10 @@
 
       </div>
       <div id="loggedin">
-        <!-- <div id="user-profile">
+        <div id="user-profile">
         </div>
         <div id="oauth">
-        </div> -->
+        </div>
         <!-- <button class="btn btn-default" id="obtain-new-token">Obtain new token using the refresh token</button> -->
 
         <!-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -99,7 +107,7 @@
     <h1>Hey there {{display_name}}!</h1>
     <div class="media">
     <div class="pull-left">
-      <img class="media-object image-profile" width="150" src="{{images.0.url}}" />
+      <img class="media-object image-profile" src="{{images.0.url}}" />
     </div>
     <!-- <div class="media-body">
       <dl class="dl-horizontal">
@@ -128,16 +136,21 @@
       <h2>{{items.0.name}}</h2>
     </script>
 
+    <script id="test-template" type="text/x-handlebars-template">
+      <h1>test template</h1>
+      <h2>{{items.0.name}}</h2>
+    </script>
+
     <script id="top-tracks-template" type="text/x-handlebars-template">
       <div class="filter-button-wrapper">
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-          <label class="btn btn-outline-primary btn-long" id="" >
-            <input type="radio" name="options" autocomplete="off" on-click="all_time()"> All time
+          <label class="btn btn-outline-primary btn-long" id="" onclick="all_time_clicked();">
+            <input type="radio" name="options" autocomplete="off" > All time
           </label>
-          <label class="btn btn-outline-primary btn-medium">
+          <label class="btn btn-outline-primary btn-medium" onclick="medium_clicked();">
             <input type="radio" name="options" id="option2" autocomplete="off"> 6 months
           </label>
-          <label class="btn btn-outline-primary active btn-short active">
+          <label class="btn btn-outline-primary active btn-short active" onclick="recent_clicked();">
             <input type="radio" name="options" id="option3" autocomplete="off" checked> Recent
           </label>
         </div>
@@ -150,6 +163,19 @@
           </label>
         </div>
       </div>
+
+      <!-- <div class="filter-button-wrapper">
+        <div class="btn-group" role="group" aria-label="Time interval">
+          <button type="button" class="btn btn-outline-primary btn-long" data-toggle="button" onclick="all_time_clicked();">All time</button>
+          <button type="button" class="btn btn-outline-primary btn-medium" data-toggle="button">6 Months </button>
+          <button type="button" class="btn btn-outline-primary btn-short active" data-toggle="button">Recent</button>
+        </div>
+
+        <div class="btn-group" role="group" aria-label="Type">
+          <button type="button" class="btn btn-outline-primary btn-tracks active">Tracks</button>
+          <button type="button" class="btn btn-outline-primary btn-artists">Artists </button>
+        </div>
+      </div> -->
       <!-- <a href="#" class="btn btn-outline-primary btn-artists">Artists</a><a href="#" class="btn btn-outline-primary active btn-tracks">Tracks</a><br /> -->
       <!-- <a href="#" class="btn btn-outline-primary btn-long">All time</a><a href="#" class="btn btn-outline-primary btn-medium">6 months</a><a href="#" class="btn btn-outline-primary active btn-short">Recent</a> -->
 

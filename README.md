@@ -1,6 +1,6 @@
-[mytop50](http://mytop50.com)
+[mytop50](http://mytop50.com) - View your top tracks and artists over various time intervals.
 ***
- View your top tracks and artists over various time intervals.
+
 
 You will also need to setup an .env file in the main directory containing:
 
