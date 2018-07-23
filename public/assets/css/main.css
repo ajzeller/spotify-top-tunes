@@ -60,7 +60,7 @@ label:focus {
   border-radius: 500px;
   text-transform: uppercase;
   padding: 10px 30px;
-  margin: 25px auto 0 auto;
+  margin: 25px auto 25px auto;
   letter-spacing: 2px;
   font-weight: 600;
   vertical-align: middle;
@@ -277,7 +277,7 @@ label:focus {
 
 .image--iphone {
   transform: rotate(0deg);
-  width: 100%;
+  width: 90%;
   opacity: 1;
   display: block;
   margin: 20px auto 0px auto; }
@@ -351,7 +351,7 @@ label:focus {
 
 .hero {
   margin: 30px auto 0px auto;
-  width: 80%;
+  width: 90%;
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center; }
