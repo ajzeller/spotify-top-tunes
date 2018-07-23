@@ -5,7 +5,8 @@ body {
   background-color: #121212;
   font-family: 'Open Sans', sans-serif;
   font-size: 0.9rem;
-  color: #fff; }
+  color: #fff;
+  max-width: 100vw; }
 
 h5 {
   font-size: 1.2rem;
@@ -59,7 +60,7 @@ label:focus {
   border-radius: 500px;
   text-transform: uppercase;
   padding: 10px 30px;
-  margin: 50px auto 0 auto;
+  margin: 25px auto 0 auto;
   letter-spacing: 2px;
   font-weight: 600;
   vertical-align: middle;
@@ -67,6 +68,10 @@ label:focus {
 
 .btn-spotify:hover {
   background-color: #1AA34A; }
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+  background-color: #1AA34A;
+  border: 1px solid #1AA34A; }
 
 .btn-group {
   text-transform: uppercase;
@@ -132,18 +137,27 @@ label:focus {
   height: 3rem;
   display: flex;
   align-items: center;
-  color: rgba(255, 255, 255, 0.7); }
-
-.navbar li a {
-  color: #24292E;
-  font-size: 1.2rem;
-  text-transform: none;
-  text-shadow: 0px 1px 10px rgba(0, 0, 0, 0);
+  color: rgba(255, 255, 255, 0.7);
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); }
 
+.navbar li:hover {
+  transform: translateY(-1px);
+  text-decoration: none; }
+
+.navbar li a {
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: none;
+  text-shadow: 0px 1px 10px rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center; }
+
 .navbar li a:hover {
-  transform: translateY(-2px); }
+  color: #fff;
+  cursor: pointer; }
+
+.navbar li a:hover {
+  text-decoration: none; }
 
 .navbar li:hover {
   color: #fff;
@@ -155,6 +169,9 @@ label:focus {
 .navbar .fas {
   font-size: 1.3rem;
   margin: 0.7rem; }
+
+.navbar .profile-icon {
+  display: none; }
 
 .navbar-brand {
   font-size: 1.75rem;
@@ -246,7 +263,7 @@ label:focus {
   transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1); }
 
 .image--brand:hover {
-  transform: translateY(-2px); }
+  transform: translate(-2px, -2px); }
 
 .image-profile {
   border-radius: 50%;
@@ -254,6 +271,16 @@ label:focus {
   width: 40px;
   margin: 0 0.5rem 0 0;
   float: left; }
+
+.image-profile:hover {
+  transform: translateY(-2px); }
+
+.image--iphone {
+  transform: rotate(0deg);
+  width: 100%;
+  opacity: 1;
+  display: block;
+  margin: 20px auto 0px auto; }
 
 .track-list-wrapper {
   display: grid;
@@ -323,20 +350,21 @@ label:focus {
   display: none; }
 
 .hero {
-  margin: 100px auto;
+  margin: 30px auto 0px auto;
   width: 80%;
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center; }
 
 .hero h1 {
-  font-size: 2.7rem;
+  font-size: 2rem;
   font-weight: lighter;
   text-align: center; }
 
 .container--full-width {
   margin: auto;
-  padding: 0px; }
+  padding: 0px;
+  max-width: 100vw; }
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 767px) {
@@ -389,12 +417,15 @@ label:focus {
   .container--full-width {
     width: 100%;
     margin: 0px;
-    padding: 0px; }
+    padding: 0px;
+    max-width: 100vw; }
   .name-desktop {
     display: none; }
   .name-mobile {
     display: block; }
-  #image-profile-desktop {
-    display: none; } }
+  .image-profile-desktop {
+    display: none; }
+  .navbar .profile-icon {
+    display: inline-block; } }
 
 /* Extra Small Devices, Phones */

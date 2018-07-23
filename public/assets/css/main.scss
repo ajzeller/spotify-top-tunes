@@ -33,6 +33,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 0.9rem;
   color: $white;
+  max-width: 100vw;
 }
 
 h1, h2, h3, h4, h5 {
@@ -106,7 +107,7 @@ label:focus {
   // height: 50px;
   text-transform: uppercase;
   padding: 10px 30px;
-  margin: 50px auto 0 auto;
+  margin: 25px auto 0 auto;
   letter-spacing: 2px;
   font-weight: $heavy-weight;
   vertical-align: middle;
@@ -115,6 +116,13 @@ label:focus {
   &:hover {
     background-color: $spotify-button-border;
   }
+
+
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+  background-color: $spotify-button-border;
+  border: 1px solid $spotify-button-border;
 }
 
 .btn.active {
@@ -222,17 +230,32 @@ label:focus {
     align-items: center;
     color: $white-hov;
 
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    &:hover {
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
     a {
-      color: $black;
-      font-size: 1.2rem;
+      color: $white-hov;
+      // font-size: 1.2rem;
       text-transform: none;
       text-shadow: 0px 1px 10px rgba(0, 0, 0, 0);
-      -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-      transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+      display: flex;
+      align-items: center;
 
       &:hover {
-        transform: translateY(-2px);
+        color: $white;
+        cursor: pointer;
       }
+
+      &:hover {
+        text-decoration: none;
+      }
+
+
     }
 
     &:hover {
@@ -261,6 +284,9 @@ label:focus {
     // }
   }
 
+  .profile-icon {
+    display: none;
+  }
 }
 
 .navbar-brand {
@@ -368,7 +394,8 @@ label:focus {
   transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
 
   &:hover {
-    transform: translateY(-2px);
+    transform: translate(-2px, -2px);
+
     // transform: rotate(5deg);
   }
 }
@@ -379,6 +406,19 @@ label:focus {
   width: 40px;
   margin: 0 0.5rem 0 0;
   float: left;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.image--iphone {
+  transform: rotate(0deg);
+  width: 100%;
+  opacity: 1;
+  display: block;
+  margin: 20px auto 0px auto;
+  // position: relative;
 }
 
 .track-list-wrapper {
@@ -473,14 +513,15 @@ label:focus {
 }
 
 .hero {
-  margin: 100px auto;
+  margin: 30px auto 0px auto;
   width: 80%;
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
+  // position: absolute;
 
   h1 {
-    font-size: 2.7rem;
+    font-size: 2rem;
     font-weight: lighter;
     text-align: center;
   }
@@ -490,6 +531,7 @@ label:focus {
   // max-width: 800px;
   margin: auto;
   padding: 0px;
+  max-width: 100vw;
 }
 
 
@@ -593,6 +635,7 @@ label:focus {
        width: 100%;
        margin: 0px;
        padding: 0px;
+       max-width: 100vw;
      }
 
      // .filter-button-wrapper {
@@ -609,11 +652,13 @@ label:focus {
        display: block;
      }
 
-      #image-profile-desktop {
-            display: none;
+      .image-profile-desktop {
+        display: none;
       }
 
-
+      .navbar .profile-icon {
+        display: inline-block;
+      }
 
    }
 

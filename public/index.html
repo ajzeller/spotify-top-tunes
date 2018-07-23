@@ -76,8 +76,8 @@
                 </div>
             </a>
 
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <!-- <img class="media-object image-profile" src="{{images.0.url}}" /> -->
+            <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <img class="media-object image-profile" src="{{images.0.url}}" />
               <span class="navbar-toggler-icon"></span>
 
             </button>
@@ -85,15 +85,15 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
-              <!-- <li class="nav-item">
+              <li class="nav-item">
                 <a class="nav-link" href="#about">about</a>
               </li>
               <li class="nav-item ">
                 <a class="nav-link nav-link--emphasis" href="#contact">contact</a>
-              </li> -->
-              <!-- <li class="nav-item" id="image-profile-desktop">
+              </li>
+              <li class="nav-item" id="image-profile-desktop">
                 <img class="media-object image-profile" src="{{images.0.url}}" />
-              </li> -->
+              </li>
               <li class="nav-item">
                 <i class="fas fa-sync" onclick="deleteCookies();"></i>
               </li>
@@ -101,13 +101,14 @@
                 <i class="fas fa-sign-out-alt" onclick="signOut();"></i>
               </li>
             </ul>
-          </div>
+          </div> -->
 
           </div>
         </nav>
 
         <div class="hero">
           <h1>Your top <span class="bold">artists</span> and <span class="bold">tracks</span> over time</h1>
+          <img src="/assets/images/iphone_2.png" class="image--iphone"/>
           <a href="/login" class="btn btn-primary btn-spotify">Connect with Spotify</a>
         </div>
 
@@ -201,15 +202,19 @@
             <li class="nav-item ">
               <a class="nav-link nav-link--emphasis" href="#contact">contact</a>
             </li> -->
-            <li class="nav-item" id="image-profile-desktop">
-              <img class="media-object image-profile" src="{{images.0.url}}" />
-            </li>
             <li class="nav-item">
-              <i class="fas fa-sync" onclick="deleteCookies();"></i>
+              <a href="{{external_urls.spotify}}" target="_blank">
+                <img class="media-object image-profile image-profile-desktop" src="{{images.0.url}}" />
+                <i class="fas fa-user-circle profile-icon"></i> <span class="regular"> My Profile </span>
+              </a>
             </li>
-            <li class="nav-item">
-              <i class="fas fa-sign-out-alt" onclick="signOut();"></i>
+            <li class="nav-item" onclick="deleteCookies();">
+              <i class="fas fa-sync" ></i> <span class="regular">Refresh</span>
             </li>
+            <li class="nav-item" onclick="signOut();">
+              <i class="fas fa-sign-out-alt" ></i> <span class="regular"> Log out </span>
+            </li>
+
           </ul>
         </div>
 
@@ -242,13 +247,13 @@
 
       <div class="filter-button-wrapper">
         <div class="btn-group btn-group-toggle" role="group" aria-label="Time interval" data-toggle="buttons">
-          <button type="button" class="btn btn-outline-primary btn-long"  onclick="long_clicked();">All time</button>
-          <button type="button" class="btn btn-outline-primary btn-medium" onclick="medium_clicked();">6 Months </button>
           <button type="button" class="btn btn-outline-primary btn-short" onclick="short_clicked();">Recent</button>
+          <button type="button" class="btn btn-outline-primary btn-medium" onclick="medium_clicked();">6 Months </button>
+          <button type="button" class="btn btn-outline-primary btn-long"  onclick="long_clicked();">All time</button>
         </div>
 
         <div class="btn-group" role="group" aria-label="Type">
-          <button type="button" class="btn btn-outline-primary btn-tracks">Tracks</button>
+          <button type="button" class="btn btn-outline-primary btn-tracks active">Tracks</button>
           <button type="button" class="btn btn-outline-primary btn-artists disabled" >Artists </button>
         </div>
       </div>
