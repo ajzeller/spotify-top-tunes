@@ -66,15 +66,24 @@
     <!-- <img class="logo" src="assets/images/logo.svg" /> -->
     <div class="container container--full-width">
       <div id="login">
+        <div class="container-logo">
+          <img src="/assets/images/logo-2.svg" class="hero-logo"/>
+          <div class="logo-text">
+            <span class="regular">my</span><span class="bold">top</span><span class="bold">50</span>
+          </div>
 
-        <nav class="navbar navbar-expand-lg navbar-dark navbar-transparent">
+        </div>
+
+
+
+        <!-- <nav class="navbar navbar-expand-lg navbar-dark navbar-transparent">
           <div class="container">
             <a class="navbar-brand" href="/">
                 <img src="/assets/images/logo-2.svg" class="image--brand"/>
                 <div class="text--brand">
                     <span class="regular">my</span><span class="bold">top</span><span class="bold">50</span>
                 </div>
-            </a>
+            </a> -->
 
             <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <img class="media-object image-profile" src="{{images.0.url}}" />
@@ -103,8 +112,8 @@
             </ul>
           </div> -->
 
-          </div>
-        </nav>
+          <!-- </div>
+        </nav> -->
 
         <div class="hero">
           <h1>Your top <span class="bold">artists</span> and <span class="bold">tracks</span> over time</h1>
@@ -247,14 +256,14 @@
 
       <div class="filter-button-wrapper">
         <div class="btn-group btn-group-toggle" role="group" aria-label="Time interval" data-toggle="buttons">
-          <button type="button" class="btn btn-outline-primary btn-short" onclick="short_clicked();">Recent</button>
-          <button type="button" class="btn btn-outline-primary btn-medium" onclick="medium_clicked();">6 Months </button>
-          <button type="button" class="btn btn-outline-primary btn-long"  onclick="long_clicked();">All time</button>
+          <button type="button" class="btn btn-outline-primary btn-short" onclick="media_request('tracks', 'short');">Recent</button>
+          <button type="button" class="btn btn-outline-primary btn-medium" onclick="media_request('tracks', 'medium');">6 Months </button>
+          <button type="button" class="btn btn-outline-primary btn-long"  onclick="media_request('tracks', 'long');">All time</buttonz>
         </div>
 
         <div class="btn-group" role="group" aria-label="Type">
-          <button type="button" class="btn btn-outline-primary btn-tracks active">Tracks</button>
-          <button type="button" class="btn btn-outline-primary btn-artists disabled" >Artists </button>
+          <button type="button" class="btn btn-outline-primary btn-tracks " id='btn-tracks' >Tracks</button>
+          <button type="button" class="btn btn-outline-primary btn-artists active" id='btn-artists' >Artists </button>
         </div>
       </div>
       <!-- <a href="#" class="btn btn-outline-primary btn-artists">Artists</a><a href="#" class="btn btn-outline-primary active btn-tracks">Tracks</a><br /> -->

@@ -170,6 +170,11 @@ label:focus {
       box-shadow: none !important;
     }
 
+    opacity: 1;
+   transition: opacity 0.4s ease-in;
+   -moz-transition: opacity 0.4s ease-in;
+   -webkit-transition: opacity 0.4s ease-in;
+
   }
 
   .btn-outline-primary:not(:disabled):not(.disabled).active {
@@ -414,7 +419,7 @@ label:focus {
 
 .image--iphone {
   transform: rotate(0deg);
-  width: 90%;
+  width: 30%;
   opacity: 1;
   display: block;
   margin: 20px auto 0px auto;
@@ -508,12 +513,22 @@ label:focus {
 
 }
 
+#topTracks {
+  max-width: 800px;
+  margin: auto;
+
+  opacity: 1;
+   transition: opacity 0.4s ease-in;
+   -moz-transition: opacity 0.4s ease-in;
+   -webkit-transition: opacity 0.4s ease-in;
+}
+
 .name-mobile {
   display: none;
 }
 
 .hero {
-  margin: 30px auto 0px auto;
+  margin: 20px auto 0px auto;
   width: 90%;
   display: grid;
   grid-template-columns: 1fr;
@@ -534,6 +549,31 @@ label:focus {
   max-width: 100vw;
 }
 
+.container-logo {
+  display: grid;
+  grid-template-columns: 3fr 5fr;
+  margin: 20px auto 0 auto;
+  // padding: auto;
+  width: 200px;
+  font-size: 2rem;
+  justify-items: center;
+  align-content: center;
+
+  span {
+    vertical-align: bottom;
+  }
+}
+
+.hero-logo {
+  margin: auto;
+  height: 70px;
+  display: inline-block;
+}
+
+.logo-text {
+  display: flex;
+  align-items: center;
+}
 
 
 
@@ -658,6 +698,10 @@ label:focus {
 
       .navbar .profile-icon {
         display: inline-block;
+      }
+
+      .image--iphone {
+        width: 90%;
       }
 
    }

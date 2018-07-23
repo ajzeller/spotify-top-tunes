@@ -38,11 +38,17 @@ var artistsMedium;
 var artistsLong;
 
 // set intial conditions (Recent, Tracks)
-var listType = "tracks";
+var listType = 'tracks';
 var listDuration = "short";
+
+
 
 function media_request(type, range) {
   console.log( type + ' over ' + range + " was clicked");
+
+  var isTracks = $('#btn-tracks').hasClass('active');
+
+  console.log(isTracks);
 
   $.ajax({
     url: '/refresh_token',
@@ -55,7 +61,7 @@ function media_request(type, range) {
     var access_token = data.access_token;
 
     $.ajax({
-        url: 'https://api.spotify.com/v1/me/top/' + listType + '?time_range=' + listDuration + '_term&limit=50',
+        url: 'https://api.spotify.com/v1/me/top/' + type + '?time_range=' + range + '_term&limit=50',
         headers: {
           'Authorization': 'Bearer ' + access_token
         },
@@ -63,7 +69,7 @@ function media_request(type, range) {
           console.log(response);
           document.getElementById('topTracks').innerHTML = topTracksTemplate(response);
           $('.btn-' + range).button('toggle');
-          $('.btn-' + type).button('toggle');
+          // $('.btn-' + type).button('toggle');
           // let responseJSON = response;
           // let responseJSON = JSON.stringify(response);
           // Cookies.set('tracksShort', responseJSON);
