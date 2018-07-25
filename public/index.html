@@ -24,46 +24,8 @@
 
   <body>
 
-    <div id="navbarTemplate">
+    <div id="navbarTemplate"></div>
 
-    </div>
-
-<!-- <nav class="navbar navbar-expand-lg navbar-dark navbar-transparent">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-        <img src="/assets/images/logo-2.svg" class="image--brand"/>
-        <div class="text--brand">
-            <span class="regular">my</span><span class="bold">top</span><span class="bold">50</span>
-        </div>
-    </a>
-
-
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#about">about</a>
-      </li>
-      <li class="nav-item ">
-        <a class="nav-link nav-link--emphasis" href="#contact">contact</a>
-      </li>
-      <li class="nav-item">
-        <i class="fas fa-sync" onclick="deleteCookies();"></i>
-      </li>
-      <li class="nav-item">
-        <i class="fas fa-sign-out-alt" onclick="signOut();"></i>
-      </li>
-    </ul>
-  </div>
-
-  </div>
-</nav> -->
-
-
-    <!-- <img class="logo" src="assets/images/logo.svg" /> -->
     <div class="container container--full-width">
       <div id="login">
         <div class="container-logo">
@@ -74,117 +36,22 @@
 
         </div>
 
-
-
-        <!-- <nav class="navbar navbar-expand-lg navbar-dark navbar-transparent">
-          <div class="container">
-            <a class="navbar-brand" href="/">
-                <img src="/assets/images/logo-2.svg" class="image--brand"/>
-                <div class="text--brand">
-                    <span class="regular">my</span><span class="bold">top</span><span class="bold">50</span>
-                </div>
-            </a> -->
-
-            <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <img class="media-object image-profile" src="{{images.0.url}}" />
-              <span class="navbar-toggler-icon"></span>
-
-            </button>
-
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="#about">about</a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link nav-link--emphasis" href="#contact">contact</a>
-              </li>
-              <li class="nav-item" id="image-profile-desktop">
-                <img class="media-object image-profile" src="{{images.0.url}}" />
-              </li>
-              <li class="nav-item">
-                <i class="fas fa-sync" onclick="deleteCookies();"></i>
-              </li>
-              <li class="nav-item">
-                <i class="fas fa-sign-out-alt" onclick="signOut();"></i>
-              </li>
-            </ul>
-          </div> -->
-
-          <!-- </div>
-        </nav> -->
-
         <div class="hero">
           <h1>Your top <span class="bold">artists</span> and <span class="bold">tracks</span> over time</h1>
           <img src="/assets/images/iphone_2.png" class="image--iphone"/>
           <a href="/login" class="btn btn-primary btn-spotify">Connect with Spotify</a>
         </div>
+      </div>
 
+      <div id="loggedin">
+
+        <div id="topTracks">
+        </div>
 
       </div>
-      <div id="loggedin">
-        <div id="user-profile">
-        </div>
-        <div id="oauth">
-        </div>
-        <!-- <button class="btn btn-default" id="obtain-new-token">Obtain new token using the refresh token</button> -->
-
-        <!-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
-      <label class="btn btn-secondary active">
-        <input type="radio" name="options" id="option1" autocomplete="off" checked> All time
-      </label>
-      <label class="btn btn-secondary">
-        <input type="radio" name="options" id="option2" autocomplete="off"> 6 Months
-      </label>
-      <label class="btn btn-secondary">
-        <input type="radio" name="options" id="option3" autocomplete="off"> Recent
-      </label>
-    </div> -->
-
-    <div id="topTracks">
     </div>
 
-    <div id="testTemplate">
-    </div>
-
-    </div>
-    </div>
-
-
-
-    <script id="user-profile-template" type="text/x-handlebars-template">
-    <h1>Hey there {{display_name}}!</h1>
-    <div class="media">
-    <div class="pull-left">
-      <img class="media-object image-profile" src="{{images.0.url}}" />
-    </div>
-    <!-- <div class="media-body">
-      <dl class="dl-horizontal">
-        <dt>Display name</dt><dd class="clearfix">{{display_name}}</dd>
-        <dt>Id</dt><dd>{{id}}</dd>
-        <dt>Email</dt><dd>{{email}}</dd>
-        <dt>Spotify URI</dt><dd><a href="{{external_urls.spotify}}">{{external_urls.spotify}}</a></dd>
-        <dt>Link</dt><dd><a href="{{href}}">{{href}}</a></dd>
-        <dt>Profile Image</dt><dd class="clearfix"><a href="{{images.0.url}}">{{images.0.url}}</a></dd>
-        <dt>Country</dt><dd>{{country}}</dd>
-      </dl>
-    </div> -->
-    </div>
-    </script>
-
-    <script id="oauth-template" type="text/x-handlebars-template">
-    <h2>oAuth info</h2>
-    <dl class="dl-horizontal">
-    <dt>Access token</dt><dd class="text-overflow">{{access_token}}</dd>
-    <dt>Refresh token</dt><dd class="text-overflow">{{refresh_token}}</dd>
-    </dl>
-    </script>
-
-    <script id="test-template" type="text/x-handlebars-template">
-      <h1>test template</h1>
-      <h2>{{items.0.name}}</h2>
-    </script>
+    <!-- handlebars scripts -->
 
     <script id="navbar-Template" type="text/x-handlebars-template">
       <nav class="navbar navbar-expand-lg navbar-dark navbar-transparent">
@@ -192,109 +59,73 @@
           <a class="navbar-brand" href="/">
               <img src="/assets/images/logo-2.svg" class="image--brand"/>
               <div class="text--brand">
-                  <span class="regular">my</span><span class="bold">top</span><span class="bold">50</span>
+                <span class="regular">my</span><span class="bold">top</span><span class="bold">50</span>
               </div>
           </a>
 
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <img class="media-object image-profile" src="{{images.0.url}}" />
             <span class="navbar-toggler-icon"></span>
-
           </button>
 
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="#about">about</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link nav-link--emphasis" href="#contact">contact</a>
-            </li> -->
-            <li class="nav-item">
-              <a href="{{external_urls.spotify}}" target="_blank">
-                <img class="media-object image-profile image-profile-desktop" src="{{images.0.url}}" />
-                <i class="fas fa-user-circle profile-icon"></i> <span class="regular"> My Profile </span>
-              </a>
-            </li>
-            <li class="nav-item" onclick="deleteCookies();">
-              <i class="fas fa-sync" ></i> <span class="regular">Refresh</span>
-            </li>
-            <li class="nav-item" onclick="signOut();">
-              <i class="fas fa-sign-out-alt" ></i> <span class="regular"> Log out </span>
-            </li>
-
-          </ul>
-        </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="#about">about</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link nav-link--emphasis" href="#contact">contact</a>
+              </li> -->
+              <li class="nav-item">
+                <a href="{{external_urls.spotify}}" target="_blank">
+                  <img class="media-object image-profile image-profile-desktop" src="{{images.0.url}}" />
+                  <i class="fas fa-user-circle profile-icon"></i> <span class="regular"> My Profile </span>
+                </a>
+              </li>
+              <li class="nav-item" onclick="deleteCookies();">
+                <i class="fas fa-sync" ></i> <span class="regular">Refresh</span>
+              </li>
+              <li class="nav-item" onclick="signOut();">
+                <i class="fas fa-sign-out-alt" ></i> <span class="regular"> Log out </span>
+              </li>
+            </ul>
+          </div>
 
         </div>
       </nav>
     </script>
 
     <script id="top-tracks-template" type="text/x-handlebars-template">
-      <!-- <div class="filter-button-wrapper">
-        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-          <label class="btn btn-outline-primary btn-long" id="" onclick="long_clicked();">
-            <input type="radio" name="options" autocomplete="off" > All time
-          </label>
-          <label class="btn btn-outline-primary btn-medium" onclick="medium_clicked();">
-            <input type="radio" name="options" id="option2" autocomplete="off"> 6 months
-          </label>
-          <label class="btn btn-outline-primary active btn-short" onclick="short_clicked();">
-            <input type="radio" name="options" id="option3" autocomplete="off"> Recent
-          </label>
-        </div>
-        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-          <label class="btn btn-outline-primary btn-artists">
-            <input type="radio" name="options" id="option1" autocomplete="off" > Artists
-          </label>
-          <label class="btn btn-outline-primary active btn-tracks">
-            <input type="radio" name="options" id="option2" autocomplete="off" > Tracks
-          </label>
-        </div>
-      </div> -->
 
-      <div class="filter-button-wrapper">
-        <div class="btn-group btn-group-toggle" role="group" aria-label="Time interval" data-toggle="buttons">
-          <button type="button" class="btn btn-outline-primary btn-short" onclick="rangeClicked('short');">Recent</button>
-          <button type="button" class="btn btn-outline-primary btn-medium" onclick="rangeClicked('medium');">6 Months </button>
-          <button type="button" class="btn btn-outline-primary btn-long"  onclick="rangeClicked('long');">All time</buttonz>
-        </div>
 
-        <div class="btn-group btn-group-toggle" role="group" aria-label="Type" data-toggle="buttons">
-          <button type="button" class="btn btn-outline-primary btn-tracks" id='btn-tracks' onclick="typeClicked('tracks');">Tracks</button>
-          <button type="button" class="btn btn-outline-primary btn-artists " id='btn-artists' onclick="typeClicked('artists');">Artists</button>
-        </div>
-      </div>
-      <!-- <a href="#" class="btn btn-outline-primary btn-artists">Artists</a><a href="#" class="btn btn-outline-primary active btn-tracks">Tracks</a><br /> -->
-      <!-- <a href="#" class="btn btn-outline-primary btn-long">All time</a><a href="#" class="btn btn-outline-primary btn-medium">6 months</a><a href="#" class="btn btn-outline-primary active btn-short">Recent</a> -->
+      {{> filterButtons }}
 
       <div class="track-list-wrapper">
         {{#each items}}
-        <div class="track-list-item">
-
+          <div class="track-list-item">
             <div class="album-cover">
-              <div class="top-left">{{inc @index}} </div>
-              <img class="album-artwork" src="{{this.album.images.0.url}}" />
+                <div class="top-left">{{inc @index}} </div>
+                <img class="album-artwork" src="{{this.album.images.0.url}}" />
             </div>
             <div class="track-info">
-              <div class="track">
-                <span class="name-mobile">{{truncate this.name 30}}</span>
-                <span class="name-desktop">{{this.name}}</span>
-              </div>
-              <div class="artist">
-                {{#each this.artists}}
-                <span class="artist-name">{{this.name}}</span>
-                  <!-- {{truncate this.name 20}} -->
-                {{/each}}
-              </div>
+                <div class="track">
+                  <span class="name-mobile">{{truncate this.name 30}}</span>
+                  <span class="name-desktop">{{this.name}}</span>
+                </div>
+                <div class="artist">
+                  {{#each this.artists}}
+                    <span class="artist-name">{{this.name}}</span>
+                  {{/each}}
+                </div>
             </div>
-            <div class="spotify-link"><a href="{{this.external_urls.spotify}} " target="_blank"><i class="fas fa-play"></i></a></div>
+              <div class="spotify-link">
+                <a href="{{this.external_urls.spotify}} " target="_blank"><i class="fas fa-play"></i></a>
+              </div>
 
 
 
-            <!-- <span class="track-name"> </span>  <span class="artist-name"></span> -->
-        </div>
+              <!-- <span class="track-name"> </span>  <span class="artist-name"></span> -->
+          </div>
         {{/each}}
       </div>
 
@@ -302,28 +133,35 @@
     </script>
 
     <script id="top-artists-template" type="text/x-handlebars-template">
-      <!-- <div class="filter-button-wrapper">
-        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-          <label class="btn btn-outline-primary btn-long" id="" onclick="long_clicked();">
-            <input type="radio" name="options" autocomplete="off" > All time
-          </label>
-          <label class="btn btn-outline-primary btn-medium" onclick="medium_clicked();">
-            <input type="radio" name="options" id="option2" autocomplete="off"> 6 months
-          </label>
-          <label class="btn btn-outline-primary active btn-short" onclick="short_clicked();">
-            <input type="radio" name="options" id="option3" autocomplete="off"> Recent
-          </label>
-        </div>
-        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-          <label class="btn btn-outline-primary btn-artists">
-            <input type="radio" name="options" id="option1" autocomplete="off" > Artists
-          </label>
-          <label class="btn btn-outline-primary active btn-tracks">
-            <input type="radio" name="options" id="option2" autocomplete="off" > Tracks
-          </label>
-        </div>
-      </div> -->
 
+
+      {{> filterButtons }}
+
+      <div class="track-list-wrapper">
+        {{#each items}}
+          <div class="track-list-item">
+              <div class="album-cover">
+                <div class="top-left">{{inc @index}} </div>
+                <img class="album-artwork" src="{{this.images.0.url}}" />
+              </div>
+              <div class="track-info">
+                <div class="track">
+                  <span class="name-mobile">{{truncate this.name 30}}</span>
+                  <span class="name-desktop">{{this.name}}</span>
+                </div>
+                <div class="artist">
+                  <span class="artist-name">{{formatCommas this.followers.total }} </i> followers</span>
+                </div>
+              </div>
+              <div class="spotify-link">
+                <a href="{{this.external_urls.spotify}} " target="_blank"><i class="fas fa-angle-right"></i></a>
+              </div>
+          </div>
+        {{/each}}
+      </div>
+    </script>
+
+    <script id="filter-buttons" type="text/x-handlebars-template">
       <div class="filter-button-wrapper">
         <div class="btn-group btn-group-toggle" role="group" aria-label="Time interval" data-toggle="buttons">
           <button type="button" class="btn btn-outline-primary btn-short" onclick="rangeClicked('short');">Recent</button>
@@ -336,38 +174,8 @@
           <button type="button" class="btn btn-outline-primary btn-artists " id='btn-artists' onclick="typeClicked('artists');">Artists</button>
         </div>
       </div>
-      <!-- <a href="#" class="btn btn-outline-primary btn-artists">Artists</a><a href="#" class="btn btn-outline-primary active btn-tracks">Tracks</a><br /> -->
-      <!-- <a href="#" class="btn btn-outline-primary btn-long">All time</a><a href="#" class="btn btn-outline-primary btn-medium">6 months</a><a href="#" class="btn btn-outline-primary active btn-short">Recent</a> -->
-
-      <div class="track-list-wrapper">
-        {{#each items}}
-        <div class="track-list-item">
-
-            <div class="album-cover">
-              <div class="top-left">{{inc @index}} </div>
-              <img class="album-artwork" src="{{this.images.0.url}}" />
-            </div>
-            <div class="track-info">
-              <div class="track">
-                <span class="name-mobile">{{truncate this.name 30}}</span>
-                <span class="name-desktop">{{this.name}}</span>
-              </div>
-              <div class="artist">
-                <span class="artist-name">{{formatCommas this.followers.total }} </i> followers</span>
-                  <!-- {{truncate this.name 20}} -->
-              </div>
-            </div>
-            <div class="spotify-link"><a href="{{this.external_urls.spotify}} " target="_blank"><i class="fas fa-angle-right"></i></i></i></a></div>
-
-
-
-            <!-- <span class="track-name"> </span>  <span class="artist-name"></span> -->
-        </div>
-        {{/each}}
-      </div>
-
-
     </script>
+
 
 
     <script src="/jquery/dist/jquery.min.js"></script>

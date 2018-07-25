@@ -33,6 +33,9 @@ Handlebars.registerHelper('formatCommas', function(value) {
     return value.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
 });
 
+Handlebars.registerPartial('filterButtons', $("#filter-buttons").html());
+
+
 var userProfile;
 var tracksShort;
 var tracksMedium;
@@ -200,8 +203,7 @@ function short_clicked() {
 //     testTemplatePlaceholder = document.getElementById('testTemplate');
 // console.log(api_response);
 // testTemplatePlaceholder.innerHTML = testTemplate(api_response);
-var userProfileSource = document.getElementById('user-profile-template').innerHTML, // handlebars gets template
-    userProfileTemplate = Handlebars.compile(userProfileSource); // handlebars compiles template into function
+
     // userProfilePlaceholder = document.getElementById('user-profile'); // output of handlebars function placed in element
 var topTracksSource = document.getElementById('top-tracks-template').innerHTML,
     topTracksTemplate = Handlebars.compile(topTracksSource);
