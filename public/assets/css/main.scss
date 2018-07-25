@@ -202,8 +202,8 @@ label:focus {
   }
 
   .btn-artists {
-    text-decoration: line-through;
-    color: $grey-text;
+    // text-decoration: line-through;
+    // color: $grey-text;
   }
 
 
@@ -472,7 +472,7 @@ label:focus {
 
       .album-artwork {
         height: 60px;
-        width: auto;
+        width: 60px;
         float: left;
       }
     }

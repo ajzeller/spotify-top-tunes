@@ -256,14 +256,14 @@
 
       <div class="filter-button-wrapper">
         <div class="btn-group btn-group-toggle" role="group" aria-label="Time interval" data-toggle="buttons">
-          <button type="button" class="btn btn-outline-primary btn-short" onclick="media_request('tracks', 'short');">Recent</button>
-          <button type="button" class="btn btn-outline-primary btn-medium" onclick="media_request('tracks', 'medium');">6 Months </button>
-          <button type="button" class="btn btn-outline-primary btn-long"  onclick="media_request('tracks', 'long');">All time</buttonz>
+          <button type="button" class="btn btn-outline-primary btn-short" onclick="rangeClicked('short');">Recent</button>
+          <button type="button" class="btn btn-outline-primary btn-medium" onclick="rangeClicked('medium');">6 Months </button>
+          <button type="button" class="btn btn-outline-primary btn-long"  onclick="rangeClicked('long');">All time</buttonz>
         </div>
 
         <div class="btn-group" role="group" aria-label="Type">
-          <button type="button" class="btn btn-outline-primary btn-tracks active" id='btn-tracks' >Tracks</button>
-          <button type="button" class="btn btn-outline-primary btn-artists " id='btn-artists' >Artists</button>
+          <button type="button" class="btn btn-outline-primary btn-tracks" id='btn-tracks' onclick="typeClicked('tracks');">Tracks</button>
+          <button type="button" class="btn btn-outline-primary btn-artists " id='btn-artists' onclick="typeClicked('artists');">Artists</button>
         </div>
       </div>
       <!-- <a href="#" class="btn btn-outline-primary btn-artists">Artists</a><a href="#" class="btn btn-outline-primary active btn-tracks">Tracks</a><br /> -->
@@ -290,6 +290,74 @@
               </div>
             </div>
             <div class="spotify-link"><a href="{{this.external_urls.spotify}} " target="_blank"><i class="fas fa-play"></i></a></div>
+
+
+
+            <!-- <span class="track-name"> </span>  <span class="artist-name"></span> -->
+        </div>
+        {{/each}}
+      </div>
+
+
+    </script>
+
+    <script id="top-artists-template" type="text/x-handlebars-template">
+      <!-- <div class="filter-button-wrapper">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-outline-primary btn-long" id="" onclick="long_clicked();">
+            <input type="radio" name="options" autocomplete="off" > All time
+          </label>
+          <label class="btn btn-outline-primary btn-medium" onclick="medium_clicked();">
+            <input type="radio" name="options" id="option2" autocomplete="off"> 6 months
+          </label>
+          <label class="btn btn-outline-primary active btn-short" onclick="short_clicked();">
+            <input type="radio" name="options" id="option3" autocomplete="off"> Recent
+          </label>
+        </div>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-outline-primary btn-artists">
+            <input type="radio" name="options" id="option1" autocomplete="off" > Artists
+          </label>
+          <label class="btn btn-outline-primary active btn-tracks">
+            <input type="radio" name="options" id="option2" autocomplete="off" > Tracks
+          </label>
+        </div>
+      </div> -->
+
+      <div class="filter-button-wrapper">
+        <div class="btn-group btn-group-toggle" role="group" aria-label="Time interval" data-toggle="buttons">
+          <button type="button" class="btn btn-outline-primary btn-short" onclick="rangeClicked('short');">Recent</button>
+          <button type="button" class="btn btn-outline-primary btn-medium" onclick="rangeClicked('medium');">6 Months </button>
+          <button type="button" class="btn btn-outline-primary btn-long"  onclick="rangeClicked('long');">All time</button>
+        </div>
+
+        <div class="btn-group" role="group" aria-label="Type">
+          <button type="button" class="btn btn-outline-primary btn-tracks" id='btn-tracks' onclick="typeClicked('tracks');">Tracks</button>
+          <button type="button" class="btn btn-outline-primary btn-artists " id='btn-artists' onclick="typeClicked('artists');">Artists</button>
+        </div>
+      </div>
+      <!-- <a href="#" class="btn btn-outline-primary btn-artists">Artists</a><a href="#" class="btn btn-outline-primary active btn-tracks">Tracks</a><br /> -->
+      <!-- <a href="#" class="btn btn-outline-primary btn-long">All time</a><a href="#" class="btn btn-outline-primary btn-medium">6 months</a><a href="#" class="btn btn-outline-primary active btn-short">Recent</a> -->
+
+      <div class="track-list-wrapper">
+        {{#each items}}
+        <div class="track-list-item">
+
+            <div class="album-cover">
+              <div class="top-left">{{inc @index}} </div>
+              <img class="album-artwork" src="{{this.images.0.url}}" />
+            </div>
+            <div class="track-info">
+              <div class="track">
+                <span class="name-mobile">{{truncate this.name 30}}</span>
+                <span class="name-desktop">{{this.name}}</span>
+              </div>
+              <div class="artist">
+                <span class="artist-name">{{formatCommas this.followers.total }} </i> followers</span>
+                  <!-- {{truncate this.name 20}} -->
+              </div>
+            </div>
+            <div class="spotify-link"><a href="{{this.external_urls.spotify}} " target="_blank"><i class="fas fa-angle-right"></i></i></i></a></div>
 
 
 

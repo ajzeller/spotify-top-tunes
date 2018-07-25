@@ -29,6 +29,10 @@ Handlebars.registerHelper("truncate", function(value, desired_length)
 
 });
 
+Handlebars.registerHelper('formatCommas', function(value) {
+    return value.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+});
+
 var userProfile;
 var tracksShort;
 var tracksMedium;
@@ -39,16 +43,15 @@ var artistsLong;
 
 // set intial conditions (Recent, Tracks)
 var listType = 'tracks';
-var listDuration = "short";
+var listRange = "short";
 
 
 
 function media_request(type, range) {
-  console.log( type + ' over ' + range + " was clicked");
+  // console.log( type + ' over ' + range + " was clicked");
 
-  var isTracks = $('#btn-tracks').hasClass('active');
 
-  console.log(isTracks);
+  // console.log(isTracks);
 
   $.ajax({
     url: '/refresh_token',
@@ -67,8 +70,9 @@ function media_request(type, range) {
         },
         success: function(response) {
           console.log(response);
-          document.getElementById('topTracks').innerHTML = topTracksTemplate(response);
+          listType =='tracks' ? document.getElementById('topTracks').innerHTML = topTracksTemplate(response) : document.getElementById('topTracks').innerHTML = topArtistsTemplate(response);
           $('.btn-' + range).button('toggle');
+          $('.btn-' + type).button('toggle');
           // $('.btn-' + type).button('toggle');
           // let responseJSON = response;
           // let responseJSON = JSON.stringify(response);
@@ -77,6 +81,16 @@ function media_request(type, range) {
         }
     });
   });
+}
+
+function typeClicked(type) {
+  listType = type; //updates list type
+  media_request(listType, listRange);
+}
+
+function rangeClicked(range) {
+  listRange = range; //updates duration type
+  media_request(listType, listRange);
 }
 
 function long_clicked() {
@@ -197,6 +211,9 @@ var topTracksSource = document.getElementById('top-tracks-template').innerHTML,
 var navbarSource = document.getElementById('navbar-Template').innerHTML,
     navbarTemplate = Handlebars.compile(navbarSource);
 
+var topArtistsSource = document.getElementById('top-artists-template').innerHTML,
+    topArtistsTemplate = Handlebars.compile(topArtistsSource);
+
 // var access_token = params.access_token,
 //     refresh_token = params.refresh_token,
 //     error = params.error;
@@ -284,7 +301,7 @@ if (refresh_token) {
     });
 
     $.ajax({
-        url: 'https://api.spotify.com/v1/me/top/' + listType + '?time_range=' + listDuration + '_term&limit=50',
+        url: 'https://api.spotify.com/v1/me/top/' + listType + '?time_range=' + listRange + '_term&limit=50',
         headers: {
           'Authorization': 'Bearer ' + access_token
         },
@@ -292,7 +309,8 @@ if (refresh_token) {
 
           // console.log(response);
           document.getElementById('topTracks').innerHTML = topTracksTemplate(response);
-          $('.btn-' + listDuration).button('toggle');
+          $('.btn-' + listRange).button('toggle');
+          $('.btn-' + listType).button('toggle');
           let responseJSON = response;
           // let responseJSON = JSON.stringify(response);
           Cookies.set('tracksShort', responseJSON);

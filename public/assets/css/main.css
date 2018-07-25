@@ -118,10 +118,6 @@ label:focus {
   outline: 0 !important;
   box-shadow: none !important; }
 
-.btn-group .btn-artists {
-  text-decoration: line-through;
-  color: #7F7F7F; }
-
 .filter-button-wrapper {
   width: 100%;
   padding: 5px;
@@ -323,7 +319,7 @@ label:focus {
 
 .track-list-wrapper .track-list-item .album-cover .album-artwork {
   height: 60px;
-  width: auto;
+  width: 60px;
   float: left; }
 
 .track-list-wrapper .track-list-item .track-info {
