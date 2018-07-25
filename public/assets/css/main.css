@@ -73,6 +73,10 @@ label:focus {
   background-color: #1AA34A;
   border: 1px solid #1AA34A; }
 
+.btn-outline-primary:not(:disabled):not(.disabled):active {
+  background-color: #1AA34A;
+  border: 1px solid #1AA34A; }
+
 .btn-group {
   text-transform: uppercase;
   margin: auto; }

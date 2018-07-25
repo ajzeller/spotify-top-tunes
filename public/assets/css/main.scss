@@ -125,6 +125,11 @@ label:focus {
   border: 1px solid $spotify-button-border;
 }
 
+.btn-outline-primary:not(:disabled):not(.disabled):active {
+  background-color: $spotify-button-border;
+  border: 1px solid $spotify-button-border;
+}
+
 .btn.active {
   // background-color: $black;
 }
