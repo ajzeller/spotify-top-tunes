@@ -243,7 +243,9 @@ label:focus {
     height: 3rem;
     display: flex;
     align-items: center;
-    color: $white-hov;
+    color: $grey-text;
+    text-transform: lowercase;
+    letter-spacing: 0.03rem;
 
     -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -254,9 +256,9 @@ label:focus {
     }
 
     a {
-      color: $white-hov;
+      color: $grey-text;
       // font-size: 1.2rem;
-      text-transform: none;
+      // text-transform: none;
       text-shadow: 0px 1px 10px rgba(0, 0, 0, 0);
       display: flex;
       align-items: center;
@@ -300,7 +302,7 @@ label:focus {
   }
 
   .profile-icon {
-    display: none;
+    display: inline-block;
   }
 }
 
@@ -322,10 +324,10 @@ label:focus {
 
 .text--brand {
   display: flex;
-  height: 5rem;
-  // font-size: 2rem;
+  height: 4rem;
+  font-size: 1.2rem;
   align-items: center;
-  margin: 0 0 0 4.5rem;
+  margin: 0 0 0 0rem;
   color: $white;
 }
 
@@ -403,7 +405,7 @@ label:focus {
 .image--brand {
   float: left;
   // width: 2rem;
-  height: 5rem;
+  height: 4rem;
   padding: 0;
   margin: auto 1rem auto 0;
   transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -423,13 +425,13 @@ label:focus {
   float: left;
 
   &:hover {
-    transform: translateY(-2px);
+    // transform: translateY(-2px);
   }
 }
 
 .image--iphone {
   transform: rotate(0deg);
-  width: 30%;
+  width: 90%;
   opacity: 1;
   display: block;
   margin: 20px auto 0px auto;
@@ -585,135 +587,64 @@ label:focus {
   align-items: center;
 }
 
+.name-mobile {
+  display: block;
+}
 
+.name-desktop {
+  display: none;
+}
+
+.image-profile-desktop {
+  display: none;
+}
+
+// Desktop media query
+
+@media only screen and (min-width : 767px) {
+  .image--brand {
+    height: 5rem;
+  }
+
+  .text--brand {
+    height: 5rem;
+    // font-size: 2rem;
+    margin: 0 0 0 4.5rem;
+  }
+
+  // .filter-button-wrapper {
+  //
+  //   grid-template-columns: 2fr 1fr;
+  //
+  // }
+
+  .name-desktop {
+    display: block;
+  }
+
+  .name-mobile {
+    display: none;
+  }
+
+   .navbar .profile-icon {
+     display: none;
+   }
+
+   .image--iphone {
+     width: 30%;
+   }
+}
 
 
 /* Custom, iPhone Retina */
 
    @media only screen and (max-width : 767px) {
 
-     .username-form, .password-form{
-       width: 80%;
-     }
-
-     .interest-container {
-       width: 100%;
-     }
-
-    //  ---
-
-     .page-top {
-       margin-top: 140px;
-     }
-
-     .container--hero {
-       padding: 40px 0 0 0;
-     }
-
-     .container__team-member-photo {
-         width: 60%;
-         margin: 0.5rem auto;
-     }
-
-     .splash-section-2 {
-       .col {
-         min-width: 100vw;
-         margin: 3rem 0 0 0;
-       }
-     }
-
-     .video-embed {
-       width: 100%;
-       height: 30vh;
-     }
-
-     .image--brand {
-       height: 4rem;
-     }
-
-     .text--brand {
-       height: 4rem;
-       font-size: 1.2rem;
-       margin: 0;
-     }
-
-     .image--iphone-1 {
-       display: block;
-       float: none;
-       margin: auto;
-       width: 100%;
-       visibility: hidden;
-     }
-
-     .image--logo {
-       float: none;
-       margin: auto;
-     }
-
-     .text--mint-ui {
-       margin: 30px;
-     }
-
-     .text--case-study {
-       text-align: center;
-       margin-top: 30px;
-     }
-
-     .container--contact-form {
-       width: 100%;
-     }
-
-     .container--down-arrow {
-       visibility: visible;
-     }
-
-     .container--case-study-section {
-       margin-top: 50px;
-       width: 80%;
-     }
-
-     .navbar-brand {
-       // color: $spotify-green;
-
-     }
-
-     .btn-spotify {
-       width: 100%;
-     }
-
-     .container--full-width {
-       width: 100%;
-       margin: 0px;
-       padding: 0px;
-       max-width: 100vw;
-     }
-
      // .filter-button-wrapper {
      //
      //   grid-template-columns: 2fr 1fr;
      //
      // }
-
-     .name-desktop {
-       display: none;
-     }
-
-     .name-mobile {
-       display: block;
-     }
-
-      .image-profile-desktop {
-        display: none;
-      }
-
-      .navbar .profile-icon {
-        display: inline-block;
-      }
-
-      .image--iphone {
-        width: 90%;
-      }
-
    }
 
    /* Extra Small Devices, Phones */

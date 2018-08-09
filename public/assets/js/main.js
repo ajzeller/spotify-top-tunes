@@ -48,6 +48,11 @@ var artistsLong;
 var listType = 'tracks';
 var listRange = "short";
 
+// detect mobile or desktop device
+var desktop;
+window.matchMedia("(max-width: 767px)").matches ? desktop = false : desktop = true;
+console.log(`Desktop? ${desktop}`);
+
 
 
 function media_request(type, range) {
@@ -73,6 +78,7 @@ function media_request(type, range) {
         },
         success: function(response) {
           console.log(response);
+          // document.getElementById('filter-Buttons').innerHTML = filterButtons();
           listType =='tracks' ? document.getElementById('topTracks').innerHTML = topTracksTemplate(response) : document.getElementById('topTracks').innerHTML = topArtistsTemplate(response);
           $('.btn-' + range).button('toggle');
           $('.btn-' + type).button('toggle');
@@ -215,6 +221,9 @@ var navbarSource = document.getElementById('navbar-Template').innerHTML,
 
 var topArtistsSource = document.getElementById('top-artists-template').innerHTML,
     topArtistsTemplate = Handlebars.compile(topArtistsSource);
+
+var filterButtonsSource = document.getElementById('filter-buttons').innerHTML,
+    filterButtons = Handlebars.compile(filterButtonsSource);
 
 // var access_token = params.access_token,
 //     refresh_token = params.refresh_token,

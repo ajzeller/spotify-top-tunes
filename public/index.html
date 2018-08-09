@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="icon" href="/assets/images/favicon.png">
     <style type="text/css">
       #login, #loggedin {
         display: none;
@@ -45,7 +46,28 @@
 
       <div id="loggedin">
 
+        <!-- <div class="filter-button-wrapper">
+          <div class="btn-group btn-group-toggle" role="group" aria-label="Time interval" data-toggle="buttons">
+            <button type="button" class="btn btn-outline-primary btn-short" onclick="rangeClicked('short');">Recent</button>
+            <button type="button" class="btn btn-outline-primary btn-medium" onclick="rangeClicked('medium');">6 Months </button>
+            <button type="button" class="btn btn-outline-primary btn-long"  onclick="rangeClicked('long');">All time</button>
+          </div>
+
+          <div class="btn-group btn-group-toggle" role="group" aria-label="Type" data-toggle="buttons">
+            <button type="button" class="btn btn-outline-primary btn-tracks" id='btn-tracks' onclick="typeClicked('tracks');">Tracks</button>
+            <button type="button" class="btn btn-outline-primary btn-artists " id='btn-artists' onclick="typeClicked('artists');">Artists</button>
+          </div>
+        </div> -->
+
+        <!-- <div id="filter-Buttons">
+
+        </div> -->
+
         <div id="topTracks">
+        </div>
+
+        <div id="top-list-wrapper">
+
         </div>
 
       </div>
@@ -85,9 +107,13 @@
               <li class="nav-item" onclick="deleteCookies();">
                 <i class="fas fa-sync" ></i> <span class="regular">Refresh</span>
               </li>
+              <li class="nav-item">
+                <i class="fas fa-info-circle"></i> <span class="regular"> App info </span>
+              </li>
               <li class="nav-item" onclick="signOut();">
                 <i class="fas fa-sign-out-alt" ></i> <span class="regular"> Log out </span>
               </li>
+
             </ul>
           </div>
 
@@ -96,7 +122,6 @@
     </script>
 
     <script id="top-tracks-template" type="text/x-handlebars-template">
-
 
       {{> filterButtons }}
 
@@ -169,7 +194,7 @@
           <button type="button" class="btn btn-outline-primary btn-long"  onclick="rangeClicked('long');">All time</button>
         </div>
 
-        <div class="btn-group btn-group-toggle" role="group" aria-label="Type" data-toggle="buttons">
+        <div class="btn-group btn-group-toggle btn-group-type" role="group" aria-label="Type" data-toggle="buttons">
           <button type="button" class="btn btn-outline-primary btn-tracks" id='btn-tracks' onclick="typeClicked('tracks');">Tracks</button>
           <button type="button" class="btn btn-outline-primary btn-artists " id='btn-artists' onclick="typeClicked('artists');">Artists</button>
         </div>
