@@ -99,10 +99,8 @@ label:focus {
   border: 1px solid #282828;
   border-bottom: 3px solid #282828;
   text-transform: uppercase;
-  opacity: 1;
-  transition: opacity 0.4s ease-in;
-  -moz-transition: opacity 0.4s ease-in;
-  -webkit-transition: opacity 0.4s ease-in; }
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); }
 
 .btn-group .btn-outline-primary:hover {
   border: 1px solid #282828;
@@ -127,6 +125,7 @@ label:focus {
   padding: 5px;
   display: grid;
   grid-gap: 0.1rem;
+  grid-template-areas: "range type";
   grid-template-columns: 6fr 4fr;
   justify-items: center;
   margin: 0px auto 20px auto; }
@@ -146,7 +145,6 @@ label:focus {
   display: flex;
   align-items: center;
   color: #7F7F7F;
-  text-transform: lowercase;
   letter-spacing: 0.03rem;
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); }
@@ -293,6 +291,10 @@ label:focus {
   display: grid;
   grid-template-columns: 1fr; }
 
+.track-list-wrapper a {
+  display: block;
+  text-decoration: none; }
+
 .track-list-wrapper .track-list-item {
   background-color: #181818;
   min-height: 60px;
@@ -301,6 +303,12 @@ label:focus {
   border: 0.5px solid #282828;
   border-bottom: none;
   align-items: center; }
+
+.track-list-wrapper .track-list-item:hover {
+  background-color: #282828; }
+
+.track-list-wrapper .track-list-item:hover .spotify-link {
+  color: #fff; }
 
 .track-list-wrapper .track-list-item .album-cover {
   position: relative; }
@@ -349,17 +357,38 @@ label:focus {
 .track-list-wrapper .track-list-item .track-info .artist .artist-name:last-of-type:after {
   content: ''; }
 
-.track-list-wrapper .track-list-item .spotify-link a {
+.track-list-wrapper .track-list-item .spotify-link {
   color: #7F7F7F;
   font-size: 0.8rem; }
 
 #topTracks {
-  max-width: 800px;
   margin: auto;
+  grid-area: tracks;
+  display: none;
+  width: 100vw;
   opacity: 1;
   transition: opacity 0.4s ease-in;
   -moz-transition: opacity 0.4s ease-in;
   -webkit-transition: opacity 0.4s ease-in; }
+
+#topTracks.show {
+  display: block; }
+
+#topArtists {
+  grid-area: artists;
+  display: none;
+  width: 100vw; }
+
+#topArtists.show {
+  display: block; }
+
+.charts-container {
+  max-width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-areas: "tracks" "artists";
+  grid-template-columns: 1fr;
+  justify-items: center; }
 
 .name-mobile {
   display: none; }
@@ -411,6 +440,21 @@ label:focus {
 .image-profile-desktop {
   display: none; }
 
+.btn-group-type {
+  grid-area: type; }
+
+.btn-group-range {
+  grid-area: range; }
+
+.chart-title {
+  color: #7F7F7F;
+  text-align: center;
+  display: none; }
+
+.chart-title h3 {
+  font-size: 1rem;
+  font-weight: 300; }
+
 @media only screen and (min-width: 767px) {
   .image--brand {
     height: 5rem; }
@@ -424,7 +468,34 @@ label:focus {
   .navbar .profile-icon {
     display: none; }
   .image--iphone {
-    width: 30%; } }
+    width: 30%; }
+  .image-profile-desktop {
+    display: inline-block; }
+  .btn-group .btn-outline-primary {
+    font-size: 0.8rem; }
+  .charts-container {
+    grid-template-areas: "tracks" "artists";
+    grid-template-columns: 1fr;
+    justify-items: center; }
+  #topTracks, #topArtists {
+    width: 80%; } }
 
 /* Custom, iPhone Retina */
-/* Extra Small Devices, Phones */
+@media only screen and (min-width: 1000px) {
+  .filter-button-wrapper {
+    grid-template-areas: "range";
+    grid-template-columns: 1fr; }
+  .btn-group-type {
+    display: none; }
+  .charts-container {
+    grid-template-areas: "tracks artists";
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    max-width: 1200px; }
+  #topArtists, #topTracks {
+    display: block;
+    width: 80%; }
+  #topArtists.show, #topTracks.show {
+    display: block; }
+  .chart-title {
+    display: inline-block; } }

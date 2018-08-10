@@ -63,12 +63,24 @@
 
         </div> -->
 
-        <div id="topTracks">
+        <div id="filterButtons">
         </div>
 
-        <div id="top-list-wrapper">
 
-        </div>
+
+          <div class="charts-container">
+            <div id="topTracks">
+            </div>
+
+            <div id="topArtists">
+            </div>
+          </div>
+
+
+
+
+
+      <!-- {{> footer }} -->
 
       </div>
     </div>
@@ -107,11 +119,11 @@
               <li class="nav-item" onclick="deleteCookies();">
                 <i class="fas fa-sync" ></i> <span class="regular">Refresh</span>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <i class="fas fa-info-circle"></i> <span class="regular"> App info </span>
-              </li>
+              </li> -->
               <li class="nav-item" onclick="signOut();">
-                <i class="fas fa-sign-out-alt" ></i> <span class="regular"> Log out </span>
+                <i class="fas fa-sign-out-alt" ></i> <span class="regular"> Log Out </span>
               </li>
 
             </ul>
@@ -123,11 +135,12 @@
 
     <script id="top-tracks-template" type="text/x-handlebars-template">
 
-      {{> filterButtons }}
+      <!-- {{> filterButtons }} -->
 
       <div class="track-list-wrapper">
+        <div class="chart-title"><h3>Top Tracks</h3></div>
         {{#each items}}
-          <div class="track-list-item">
+          <a href="{{this.external_urls.spotify}} " target="_blank" class="track-list-item">
             <div class="album-cover">
                 <div class="top-left">{{inc @index}} </div>
                 <img class="album-artwork" src="{{this.album.images.0.url}}" />
@@ -144,13 +157,9 @@
                 </div>
             </div>
               <div class="spotify-link">
-                <a href="{{this.external_urls.spotify}} " target="_blank"><i class="fas fa-play"></i></a>
+                <i class="fas fa-play"></i>
               </div>
-
-
-
-              <!-- <span class="track-name"> </span>  <span class="artist-name"></span> -->
-          </div>
+          </a>
         {{/each}}
       </div>
 
@@ -160,11 +169,12 @@
     <script id="top-artists-template" type="text/x-handlebars-template">
 
 
-      {{> filterButtons }}
+      <!-- {{> filterButtons }} -->
 
       <div class="track-list-wrapper">
+        <div class="chart-title"><h3>Top Artists</h3></div>
         {{#each items}}
-          <div class="track-list-item">
+          <a href="{{this.external_urls.spotify}} " target="_blank" class="track-list-item">
               <div class="album-cover">
                 <div class="top-left">{{inc @index}} </div>
                 <img class="album-artwork" src="{{this.images.0.url}}" />
@@ -179,16 +189,19 @@
                 </div>
               </div>
               <div class="spotify-link">
-                <a href="{{this.external_urls.spotify}} " target="_blank"><i class="fas fa-angle-right"></i></a>
+                <i class="fas fa-angle-right"></i>
               </div>
-          </div>
+          </a>
         {{/each}}
       </div>
+
+
+
     </script>
 
     <script id="filter-buttons" type="text/x-handlebars-template">
       <div class="filter-button-wrapper">
-        <div class="btn-group btn-group-toggle" role="group" aria-label="Time interval" data-toggle="buttons">
+        <div class="btn-group btn-group-toggle btn-group-range" role="group" aria-label="Time interval" data-toggle="buttons">
           <button type="button" class="btn btn-outline-primary btn-short" onclick="rangeClicked('short');">Recent</button>
           <button type="button" class="btn btn-outline-primary btn-medium" onclick="rangeClicked('medium');">6 Months </button>
           <button type="button" class="btn btn-outline-primary btn-long"  onclick="rangeClicked('long');">All time</button>
@@ -198,6 +211,12 @@
           <button type="button" class="btn btn-outline-primary btn-tracks" id='btn-tracks' onclick="typeClicked('tracks');">Tracks</button>
           <button type="button" class="btn btn-outline-primary btn-artists " id='btn-artists' onclick="typeClicked('artists');">Artists</button>
         </div>
+      </div>
+    </script>
+
+    <script id="footer" type="text/x-handlebars-template">
+      <div class="container-footer">
+        <p>footer</p>
       </div>
     </script>
 
