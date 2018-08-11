@@ -455,6 +455,31 @@ label:focus {
   font-size: 1rem;
   font-weight: 300; }
 
+.container-footer {
+  width: 100vw;
+  height: 100px;
+  color: #7F7F7F;
+  background-color: #181818;
+  margin: 20px 0 0 0;
+  padding: 20px 0;
+  text-align: center;
+  font-weight: 300;
+  transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1); }
+
+.container-footer .if-logo {
+  height: 30px;
+  width: auto; }
+
+.container-footer a {
+  text-decoration: none;
+  color: #7F7F7F; }
+
+.container-footer a:hover {
+  color: #fff; }
+
+.container-footer .fa-github {
+  font-size: 2rem; }
+
 @media only screen and (min-width: 767px) {
   .image--brand {
     height: 5rem; }

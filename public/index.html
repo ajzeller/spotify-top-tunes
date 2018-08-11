@@ -66,15 +66,16 @@
         <div id="filterButtons">
         </div>
 
-
-
-          <div class="charts-container">
-            <div id="topTracks">
-            </div>
-
-            <div id="topArtists">
-            </div>
+        <div class="charts-container">
+          <div id="topTracks">
           </div>
+
+          <div id="topArtists">
+          </div>
+        </div>
+
+        <div id="footer">
+        </div>
 
 
 
@@ -194,9 +195,6 @@
           </a>
         {{/each}}
       </div>
-
-
-
     </script>
 
     <script id="filter-buttons" type="text/x-handlebars-template">
@@ -214,9 +212,15 @@
       </div>
     </script>
 
-    <script id="footer" type="text/x-handlebars-template">
+    <script id="footerSection" type="text/x-handlebars-template">
       <div class="container-footer">
-        <p>footer</p>
+        <div class="container">
+          <p>
+            Made by <a href="https://interface.farm" target="_blank"><img src="/assets/images/if-logo.svg" alt="" class="if-logo"><span class="bold">interface</span><span class="regular">farm</span></a>
+            <br />
+            <a href="https://github.com/ajzeller/spotify-top-tunes"><i class="fab fa-github"></i></a>
+          </p>
+        </div>
       </div>
     </script>
 

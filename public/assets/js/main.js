@@ -188,8 +188,10 @@ var topArtistsSource = document.getElementById('top-artists-template').innerHTML
 var filterButtonsSource = document.getElementById('filter-buttons').innerHTML,
     filterButtons = Handlebars.compile(filterButtonsSource);
 
-var footerSource = document.getElementById('footer').innerHTML,
-    footer = Handlebars.compile(footerSource);
+var footerSource = document.getElementById('footerSection').innerHTML,
+    footerSection = Handlebars.compile(footerSource);
+document.getElementById('footer').innerHTML = footerSection();
+
 
 // var access_token = params.access_token,
 //     refresh_token = params.refresh_token,

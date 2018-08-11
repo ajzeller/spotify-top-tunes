@@ -17,6 +17,7 @@ $black-transparent: rgba(0,0,0,0.5);
 $lighter-black-background: #181818;
 $dark-border: #282828;
 $blue: #4988D4;
+$black-footer: #242424;
 
 // Font weights
 
@@ -668,7 +669,40 @@ label:focus {
 
 }
 
+.container-footer {
+  width: 100vw;
+  height: 100px;
+  color: $grey-text;
+  background-color: $lighter-black-background;
+  margin: 20px 0 0 0;
+  padding: 20px 0;
+  text-align: center;
+  font-weight: $light-weight;
 
+  transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+  .if-logo {
+    height: 30px;
+    width: auto;
+
+    &:hover {
+      // transform: translateY(-2px);
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: $grey-text;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  .fa-github {
+    font-size: 2rem;
+  }
+}
 
 
 
