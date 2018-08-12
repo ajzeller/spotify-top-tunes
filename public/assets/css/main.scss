@@ -546,6 +546,9 @@ label:focus {
     }
   }
 
+  .track-list-item:last-child {
+    border-bottom: 0.5px solid $dark-border;
+  }
 }
 
 #topTracks {
@@ -674,7 +677,7 @@ label:focus {
   height: 100px;
   color: $grey-text;
   background-color: $lighter-black-background;
-  margin: 20px 0 0 0;
+  margin: 0 auto;
   padding: 20px 0;
   text-align: center;
   font-weight: $light-weight;
@@ -700,11 +703,23 @@ label:focus {
   }
 
   .fa-github {
-    font-size: 2rem;
+    margin: 0 0 0 5px;
+    // font-size: 1.2rem;
+  }
+
+  .github-link {
+    // font-size: 1.2rem;
+    // margin: 0 0 0 10px;
+  }
+
+  .separator {
+    margin: 0 10px;
+    font-weight: $light-weight;
+    // font-size: 2rem;
   }
 }
 
-
+// Desktop media query
 
 @media only screen and (min-width : 767px) {
   .image--brand {
@@ -760,11 +775,41 @@ label:focus {
 
    .track-list-wrapper {
      // float: right;
+     .track-list-item:nth-of-type(1) {
+       border-top-left-radius: 7px;
+       border-top-right-radius: 7px;
+
+       .album-cover {
+         .album-artwork, .top-left {
+           border-top-left-radius: 7px;
+           border-top: 0.5px solid $dark-border;
+         }
+       }
+     }
+
+     .track-list-item:last-child {
+
+       border-bottom-left-radius: 7px;
+       border-bottom-right-radius: 7px;
+
+       .album-cover {
+         .album-artwork {
+           border-bottom-left-radius: 7px;
+           border-bottom: 0.5px solid $dark-border;
+         }
+       }
+     }
+
    }
 
    #topTracks, #topArtists {
      width: 80%;
    }
+
+   .container-footer {
+     margin: 20px auto 0 auto;
+   }
+
 }
 
 
