@@ -15,6 +15,8 @@ var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 var exphbs  = require('express-handlebars');
+var secure = require('ssl-express-www');
+
 
 var client_id = process.env.CLIENT_ID; // Your client id
 var client_secret = process.env.CLIENT_SECRET; // Your secret
@@ -37,9 +39,10 @@ var generateRandomString = function(length) {
 var stateKey = 'spotify_auth_state';
 
 var app = express();
+
 var path = require("path");
 
-
+app.use(secure);
 
 
 app.use(express.static(__dirname + '/public'))
