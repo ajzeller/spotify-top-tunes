@@ -60,7 +60,7 @@ if(process.env.NODE_ENV === 'development') {
 }
 
 if(process.env.NODE_ENV === 'production') {
-  var redirect_uri = 'http://mytop50.com/callback'; // Your redirect uri
+  var redirect_uri = 'https://mytop50.com/callback'; // Your redirect uri
 }
 
 // app.get('/', function (req, res) {

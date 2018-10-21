@@ -140,11 +140,13 @@ label:focus {
   float: right; }
 
 .navbar li {
-  margin-left: 0.75rem;
+  margin-left: 1.25rem;
   height: 3rem;
   display: flex;
   align-items: center;
   color: #7F7F7F;
+  text-transform: uppercase;
+  font-weight: bold;
   letter-spacing: 0.03rem;
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); }
@@ -452,11 +454,12 @@ label:focus {
 .chart-title {
   color: #7F7F7F;
   text-align: center;
-  display: none; }
+  display: none;
+  text-transform: uppercase; }
 
 .chart-title h3 {
   font-size: 1rem;
-  font-weight: 300; }
+  font-weight: bold; }
 
 .container-footer {
   width: 100vw;
