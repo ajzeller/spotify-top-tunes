@@ -25,7 +25,7 @@ hr {
 pre {
   padding: 0.5rem;
   margin: 1rem;
-  border: 0px solid #7F7F7F;
+  border: 0px solid #9B9B9B;
   border-radius: 0.25rem;
   background-color: #E9E6E9; }
 
@@ -38,6 +38,10 @@ pre {
 
 .regular {
   font-weight: 300; }
+
+.medium {
+  font-weight: 400;
+  letter-spacing: 0px; }
 
 *:focus {
   outline: 0 !important;
@@ -60,7 +64,7 @@ label:focus {
   border-radius: 500px;
   text-transform: uppercase;
   padding: 10px 30px;
-  margin: 25px auto 25px auto;
+  margin: 25px auto 15px auto;
   letter-spacing: 2px;
   font-weight: 600;
   vertical-align: middle;
@@ -136,6 +140,9 @@ label:focus {
   transition: top 0.6s ease-in-out;
   min-height: 8vh; }
 
+.navbar .material-icons {
+  margin-right: 5px; }
+
 .navbar ul {
   float: right; }
 
@@ -144,8 +151,7 @@ label:focus {
   height: 3rem;
   display: flex;
   align-items: center;
-  color: #7F7F7F;
-  text-transform: uppercase;
+  color: #9B9B9B;
   font-weight: bold;
   letter-spacing: 0.03rem;
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -156,7 +162,7 @@ label:focus {
   text-decoration: none; }
 
 .navbar li a {
-  color: #7F7F7F;
+  color: #9B9B9B;
   text-shadow: 0px 1px 10px rgba(0, 0, 0, 0);
   display: flex;
   align-items: center; }
@@ -269,7 +275,7 @@ label:focus {
   float: left;
   height: 4rem;
   padding: 0;
-  margin: auto 1rem auto 0;
+  margin: auto 0rem auto 0;
   transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1); }
 
 .image--brand:hover {
@@ -360,7 +366,7 @@ label:focus {
   content: ''; }
 
 .track-list-wrapper .track-list-item .spotify-link {
-  color: #7F7F7F;
+  color: #9B9B9B;
   font-size: 0.8rem; }
 
 .track-list-wrapper .track-list-item:last-child {
@@ -406,7 +412,7 @@ label:focus {
   justify-items: center; }
 
 .hero h1 {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: lighter;
   text-align: center; }
 
@@ -414,7 +420,7 @@ label:focus {
   vertical-align: middle;
   text-align: center;
   font-size: 0.8rem;
-  color: #7F7F7F; }
+  color: #9B9B9B; }
 
 .hero .material-icons {
   font-size: 0.65rem; }
@@ -438,7 +444,7 @@ label:focus {
 
 .hero-logo {
   margin: auto;
-  height: 50px;
+  height: 70px;
   display: inline-block; }
 
 .logo-text {
@@ -462,19 +468,19 @@ label:focus {
   grid-area: range; }
 
 .chart-title {
-  color: #7F7F7F;
+  color: #9B9B9B;
   text-align: center;
   display: none;
   text-transform: uppercase; }
 
 .chart-title h3 {
   font-size: 1rem;
-  font-weight: bold; }
+  font-weight: 400; }
 
 .container-footer {
   width: 100vw;
   height: 100px;
-  color: #7F7F7F;
+  color: #9B9B9B;
   background-color: #181818;
   margin: 0 auto;
   padding: 20px 0;
@@ -488,7 +494,7 @@ label:focus {
 
 .container-footer a {
   text-decoration: none;
-  color: #7F7F7F; }
+  color: #9B9B9B; }
 
 .container-footer a:hover {
   color: #fff; }

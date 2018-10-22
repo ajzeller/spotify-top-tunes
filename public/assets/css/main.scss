@@ -7,7 +7,7 @@ $white-hov: rgba(255,255,255,0.7);
 $grey-text: #999;
 $spotify-green: #1DB954;
 $spotify-button-border: #1AA34A;
-$grey-text: #7F7F7F;
+$grey-text: #9B9B9B;
 $white-lilac: #E9E6E9;
 $theme-purple: #8212E2;
 $grey-border: #ddd;
@@ -81,6 +81,12 @@ pre {
   font-weight: $light-weight;
 }
 
+.medium {
+  font-weight: $medium-weight;
+  letter-spacing: 0px;
+}
+
+
 *:focus {
   outline: 0 !important;
   box-shadow: none !important;
@@ -108,7 +114,7 @@ label:focus {
   // height: 50px;
   text-transform: uppercase;
   padding: 10px 30px;
-  margin: 25px auto 25px auto;
+  margin: 25px auto 15px auto;
   letter-spacing: 2px;
   font-weight: $heavy-weight;
   vertical-align: middle;
@@ -241,6 +247,10 @@ label:focus {
   transition: top 0.6s ease-in-out;
   min-height: 8vh;
 
+  .material-icons {
+    margin-right: 5px;
+  }
+
   ul {
     float: right;
   }
@@ -251,7 +261,7 @@ label:focus {
     display: flex;
     align-items: center;
     color: $grey-text;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 0.03rem;
 
@@ -415,7 +425,7 @@ label:focus {
   // width: 2rem;
   height: 4rem;
   padding: 0;
-  margin: auto 1rem auto 0;
+  margin: auto 0rem auto 0;
   transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
 
   &:hover {
@@ -601,7 +611,7 @@ label:focus {
   // position: absolute;
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-weight: lighter;
     text-align: center;
   }
@@ -654,7 +664,7 @@ label:focus {
 
 .hero-logo {
   margin: auto;
-  height: 50px;
+  height: 70px;
   display: inline-block;
 }
 
@@ -692,7 +702,7 @@ label:focus {
 
   h3 {
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: $medium-weight;
   }
 
 }
