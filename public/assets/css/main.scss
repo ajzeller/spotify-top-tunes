@@ -439,7 +439,7 @@ label:focus {
 
 .image--iphone {
   transform: rotate(0deg);
-  width: 90%;
+  width: 75%;
   opacity: 1;
   display: block;
   margin: 20px auto 0px auto;
@@ -601,9 +601,32 @@ label:focus {
   // position: absolute;
 
   h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: lighter;
     text-align: center;
+  }
+
+  .wrapper--secure {
+    // display: grid;
+    // justify-items: center;
+    // align-items: center;
+    // grid-template-columns: 1fr 1fr;
+  }
+
+  h5  {
+    vertical-align: middle;
+    text-align: center;
+    // text-transform: uppercase;
+    font-size: 0.8rem;
+    color: $grey-text;
+  }
+
+  .material-icons {
+    font-size: 0.65rem;
+  }
+
+  .image--iphone {
+
   }
 }
 
@@ -631,13 +654,14 @@ label:focus {
 
 .hero-logo {
   margin: auto;
-  height: 70px;
+  height: 50px;
   display: inline-block;
 }
 
 .logo-text {
   display: flex;
   align-items: center;
+  padding-right: 15px;
 }
 
 .name-mobile {
@@ -809,6 +833,13 @@ label:focus {
 
    .container-footer {
      margin: 20px auto 0 auto;
+   }
+
+   .hero {
+
+     h1 {
+       font-size: 2rem;
+     }
    }
 
 }

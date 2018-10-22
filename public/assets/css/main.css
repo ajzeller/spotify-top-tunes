@@ -284,7 +284,7 @@ label:focus {
 
 .image--iphone {
   transform: rotate(0deg);
-  width: 90%;
+  width: 75%;
   opacity: 1;
   display: block;
   margin: 20px auto 0px auto; }
@@ -406,9 +406,18 @@ label:focus {
   justify-items: center; }
 
 .hero h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: lighter;
   text-align: center; }
+
+.hero h5 {
+  vertical-align: middle;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #7F7F7F; }
+
+.hero .material-icons {
+  font-size: 0.65rem; }
 
 .container--full-width {
   margin: auto;
@@ -429,12 +438,13 @@ label:focus {
 
 .hero-logo {
   margin: auto;
-  height: 70px;
+  height: 50px;
   display: inline-block; }
 
 .logo-text {
   display: flex;
-  align-items: center; }
+  align-items: center;
+  padding-right: 15px; }
 
 .name-mobile {
   display: block; }
@@ -527,7 +537,9 @@ label:focus {
   #topTracks, #topArtists {
     width: 80%; }
   .container-footer {
-    margin: 20px auto 0 auto; } }
+    margin: 20px auto 0 auto; }
+  .hero h1 {
+    font-size: 2rem; } }
 
 /* Custom, iPhone Retina */
 @media only screen and (min-width: 1000px) {
