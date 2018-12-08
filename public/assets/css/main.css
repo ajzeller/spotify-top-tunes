@@ -144,6 +144,27 @@ label:focus {
   margin-right: 5px;
   vertical-align: middle; }
 
+.navbar .twitter-icon {
+  font-size: 1.4rem;
+  margin: 0.5rem; }
+
+.navbar .screenshot:hover {
+  transform: translateY(0px);
+  color: #9B9B9B;
+  cursor: default; }
+
+.navbar #step-twitter {
+  background-color: #197BBD; }
+
+.navbar #step-twitter a {
+  color: #fff; }
+
+.navbar .step-number {
+  padding: 0.25rem;
+  margin: 0.25rem;
+  border-radius: 0.25rem;
+  float: left; }
+
 .navbar ul {
   float: right; }
 
@@ -199,6 +220,11 @@ label:focus {
 
 .navbar-brand:hover {
   color: #24292E; }
+
+.step {
+  background-color: #242424;
+  border-radius: 0rem;
+  padding: 0.5rem; }
 
 .text--brand {
   display: flex;
@@ -608,4 +634,6 @@ label:focus {
   #topArtists.show, #topTracks.show {
     display: block; }
   .chart-title {
-    display: inline-block; } }
+    display: inline-block; }
+  .navbar .step {
+    display: none; } }

@@ -254,6 +254,39 @@ label:focus {
     vertical-align: middle;
   }
 
+  .twitter-icon {
+    font-size: 1.4rem;
+    margin: 0.5rem;
+  }
+
+  .screenshot {
+    &:hover {
+      transform: translateY(0px);
+      color: $grey-text;
+      cursor: default;
+    }
+  }
+
+  #step-twitter {
+    background-color: #197BBD;
+    
+
+    a {
+      color: $white;
+
+    }
+  }
+
+  .step-number {
+    // background-color: $black-background;
+    padding: 0.25rem;
+    margin: 0.25rem;
+    border-radius: 0.25rem;
+    float: left;
+
+    
+  }
+
   ul {
     float: right;
   }
@@ -342,6 +375,15 @@ label:focus {
   }
 
 }
+
+.step {
+  // border: 1px solid $grey-border;
+  background-color: $black-footer;
+  border-radius: 0rem;
+  padding: 0.5rem;
+}
+
+
 
 .text--brand {
   display: flex;
@@ -893,6 +935,9 @@ label:focus {
      }
    }
 
+  
+   
+
 }
 
 
@@ -933,5 +978,12 @@ label:focus {
   .chart-title {
     display: inline-block;
   }
+
+  .navbar {
+    .step {
+      // border: 1px solid $grey-border;
+      display: none; 
+    }
+   }
 
 }
