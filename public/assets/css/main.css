@@ -135,7 +135,15 @@ label:focus {
   grid-template-areas: "range type";
   grid-template-columns: 6fr 4fr;
   justify-items: center;
-  margin: 0px auto 20px auto; }
+  margin: 0px auto 0px auto; }
+
+#filterButtons {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  background-color: rgba(18, 18, 18, 0.8);
+  padding: 10px 0 10px 0;
+  z-index: 1; }
 
 .navbar {
   color: #24292E;

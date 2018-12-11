@@ -13,6 +13,7 @@ $theme-purple: #8212E2;
 $grey-border: #ddd;
 $black-text: #4A4A4A;
 $black-background: #121212;
+$black-bg-transparent: rgba(18,18,18,0.8);
 $black-transparent: rgba(0,0,0,0.5);
 $lighter-black-background: #181818;
 $dark-border: #282828;
@@ -240,7 +241,16 @@ label:focus {
   grid-template-areas: "range type";
   grid-template-columns: 6fr 4fr;
   justify-items: center;
-  margin: 0px auto 20px auto;
+  margin: 0px auto 0px auto;
+}
+
+#filterButtons {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  background-color: $black-bg-transparent;
+  padding: 10px 0 10px 0;
+  z-index: 1;
 }
 
 .navbar {
