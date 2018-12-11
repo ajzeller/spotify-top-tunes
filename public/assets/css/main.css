@@ -36,6 +36,9 @@ pre {
 .bold {
   font-weight: 600; }
 
+.underline {
+  text-decoration: underline; }
+
 .regular {
   font-weight: 300; }
 
