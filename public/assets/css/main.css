@@ -127,6 +127,24 @@ label:focus {
   outline: 0 !important;
   box-shadow: none !important; }
 
+.btn-create-playlist {
+  color: #fff;
+  display: inline-block;
+  font-size: 1rem;
+  background-color: #1DB954;
+  border: 1px solid #1AA34A;
+  border-radius: 100px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  margin: 10px 0px 0px 0px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  vertical-align: middle;
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1); }
+
+.btn-create-playlist:hover {
+  background-color: #1AA34A; }
+
 .filter-button-wrapper {
   width: 100%;
   padding: 5px;
@@ -159,13 +177,25 @@ label:focus {
   font-size: 1.4rem;
   margin: 0.5rem; }
 
+.navbar .nav-item {
+  padding: 0 0 0 0px; }
+
+.navbar .nav-item:nth-of-type(2) {
+  margin-right: 0px; }
+
+.navbar .screenshot {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem; }
+
 .navbar .screenshot:hover {
   transform: translateY(0px);
   color: #9B9B9B;
   cursor: default; }
 
 .navbar #step-twitter {
-  background-color: #197BBD; }
+  background-color: #197BBD;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem; }
 
 .navbar #step-twitter a {
   color: #fff; }
@@ -176,14 +206,11 @@ label:focus {
   border-radius: 0.25rem;
   float: left; }
 
-.navbar ul {
-  float: right; }
-
 .navbar li {
-  margin-left: 1.25rem;
   height: 3rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   color: #9B9B9B;
   font-weight: bold;
   letter-spacing: 0.03rem;
@@ -598,6 +625,13 @@ label:focus {
     display: none; }
   .navbar .profile-icon {
     display: none; }
+  .navbar .profile-link {
+    padding: 0px 0px;
+    margin: 0px 20px; }
+  .navbar .nav-item {
+    padding: 0 0 0 0px; }
+  .navbar .nav-item:nth-of-type(2) {
+    margin-right: 20px; }
   .image--iphone {
     width: 30%; }
   .image-profile-desktop {
@@ -625,7 +659,9 @@ label:focus {
   .container-footer {
     margin: 20px auto 0 auto; }
   .hero h1 {
-    font-size: 2rem; } }
+    font-size: 2rem; }
+  .btn-create-playlist {
+    margin: 0px 0px; } }
 
 /* Custom, iPhone Retina */
 @media only screen and (min-width: 1000px) {

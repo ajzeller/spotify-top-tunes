@@ -228,9 +228,27 @@ label:focus {
     // text-decoration: line-through;
     // color: $grey-text;
   }
+}
 
+.btn-create-playlist {
+  color: $white;
+  display: inline-block;
+  font-size: 1rem;
+  background-color: $spotify-green;
+  border: 1px solid $spotify-button-border;
+  border-radius: 100px;
+  // height: 50px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  margin: 10px 0px 0px 0px;
+  letter-spacing: 2px;
+  font-weight: $heavy-weight;
+  vertical-align: middle;
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
 
-
+  &:hover {
+    background-color: $spotify-button-border;
+  }
 }
 
 .filter-button-wrapper {
@@ -273,7 +291,19 @@ label:focus {
     margin: 0.5rem;
   }
 
+  .nav-item {
+    padding: 0 0 0 0px;
+
+    &:nth-of-type(2) {
+      margin-right: 0px;
+    }
+  }
+
   .screenshot {
+
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+
     &:hover {
       transform: translateY(0px);
       color: $grey-text;
@@ -283,7 +313,8 @@ label:focus {
 
   #step-twitter {
     background-color: #197BBD;
-    
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
 
     a {
       color: $white;
@@ -302,14 +333,15 @@ label:focus {
   }
 
   ul {
-    float: right;
+    // float: right;
   }
 
   li {
-    margin-left: 1.25rem;
+    // margin-left: 1.25rem;
     height: 3rem;
     display: flex;
     align-items: center;
+    justify-content: center;
     color: $grey-text;
     // text-transform: uppercase;
     font-weight: bold;
@@ -882,6 +914,19 @@ label:focus {
      display: none;
    }
 
+   .navbar .profile-link {
+     padding: 0px 0px;
+     margin: 0px 20px;
+   }
+
+   .navbar .nav-item {
+    padding: 0 0 0 0px;
+
+    &:nth-of-type(2) {
+      margin-right: 20px;
+    }
+  }
+
    .image--iphone {
      width: 30%;
    }
@@ -949,7 +994,11 @@ label:focus {
      }
    }
 
-  
+   .btn-create-playlist {
+    margin: 0px 0px;
+   }
+
+   
    
 
 }

@@ -43,6 +43,7 @@ var tracksLong;
 var artistsShort;
 var artistsMedium;
 var artistsLong;
+var trackList;
 
 // set intial conditions (Recent, Tracks)
 var listType = 'tracks';
@@ -60,6 +61,8 @@ function media_request(type, range) {
 
 
   // console.log(isTracks);
+
+  
 
   $.ajax({
     url: '/refresh_token',
@@ -79,6 +82,7 @@ function media_request(type, range) {
         },
         success: function(response) {
           console.log(response);
+          trackList = response;
           // document.getElementById('filter-Buttons').innerHTML = filterButtons();
           document.getElementById('topTracks').innerHTML = topTracksTemplate(response);
           // displayCharts(response);
@@ -123,6 +127,8 @@ function media_request(type, range) {
           $('.btn-' + range).button('toggle');
           $('.btn-' + type).button('toggle');
 
+          document.getElementById('add-playlist').innerHTML = "Add Playlist to Library";
+
           // $('.btn-' + type).button('toggle');
           // let responseJSON = response;
           // let responseJSON = JSON.stringify(response);
@@ -160,6 +166,121 @@ function rangeClicked(range) {
 }
 
 
+function create_playlist() {
+  console.log(userProfile);
+  console.log(listType);
+  console.log(listRange);
+
+  userId = userProfile.id;
+  console.log(userId);
+
+  
+  var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];;
+  var date = new Date();
+  
+  var month = months[date.getMonth()].substring(0,3);
+  var year = date.getFullYear();
+
+  var timePeriod = "";
+  var playlistTracks = [ ];
+  // playlistTracks.length =  trackList.items.length-1;
+  console.log(playlistTracks);
+
+  switch(listRange) {
+    case "short":
+      timePeriod = "Recent";
+      break;
+    case "medium":
+      timePeriod = "6 Months";
+      break;
+    case "long":
+      timePeriod = "All Time";
+      break;
+  }
+
+  for (i=0; i < trackList.items.length; i++) {
+    playlistTracks.push("spotify:track:" + trackList.items[i].id);
+  }
+
+  console.log(playlistTracks);
+
+  console.log(timePeriod);
+  console.log(trackList.items.length);
+
+  var playlistName = "mytop50 " + timePeriod + " (" + month + " " + year + ")";
+  // var playlistName = "mytop50";
+
+  console.log(playlistName);
+  
+  var urlString = 'https://api.spotify.com/v1/users/' + userId + '/playlists';
+
+  var jsonData = {
+    "name": playlistName,
+    "public": false
+  };
+
+  var addTracksData = {
+    "uris": playlistTracks,
+  };
+
+  $.ajax({
+    url: '/refresh_token',
+    data: {
+      'refresh_token': refresh_token
+    }
+  }).done(function(data) {
+
+    // console.log(data);
+    var access_token = data.access_token;
+
+    $.ajax({
+      type: 'POST',
+      url: urlString,
+      data: JSON.stringify(jsonData),
+      dataType: 'json',
+      headers: {
+        'Authorization': 'Bearer ' + access_token,
+        'Content-Type': 'application/json',
+      },
+      
+      success: function(result) {
+        playlistId = result.id;
+        var urlStringAddTracks = 'https://api.spotify.com/v1/playlists/' + playlistId + '/tracks';
+
+        console.log(playlistId);
+        console.log('Add Playlist success! :)');
+        console.log(access_token);
+
+        $.ajax({
+          type: 'POST',
+          url: urlStringAddTracks,
+          data: JSON.stringify(addTracksData),
+          dataType: 'json',
+          headers: {
+            'Authorization': 'Bearer ' + access_token,
+            'Content-Type': 'application/json',
+          },
+          
+          success: function(result) {
+            console.log('Add tracks to playlist success! :)');
+            document.getElementById('add-playlist').innerHTML = 'Playlist added 👌';
+    
+            
+          },
+          error: function() {
+            console.log('Error adding tracks! :(');
+          }
+        });
+
+      },
+      error: function() {
+        console.log('Error adding playlist! :(');
+      }
+    });
+
+  });
+
+};
 
 
 
@@ -566,3 +687,5 @@ function all_time() {
   //     });
   //   });
   // }, false);
+
+  

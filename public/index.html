@@ -133,27 +133,10 @@
                 <a class="nav-link nav-link--emphasis" href="#contact">contact</a>
               </li> -->
               
-
-              <li class="nav-item screenshot step">
-                  <span class="step-number">1.</span><span class="medium">  Take a screenshot  </span> <i class="fas fa-camera-retro"></i>
-                      
-              </li>
-
-              <li class="nav-item step" id="step-twitter">
-                
-                <a href="https://twitter.com/intent/tweet?button_hashtag=mytop50&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false">
-                  
-                  <span class="step-number">2.</span><span class="medium">  Tweet  #mytop50 </span>  <i class="fab fa-twitter twitter-icon"></i>
-                </a>
-              </li>
-
-              
-              
-
-              <li class="nav-item">
+              <li class="nav-item profile-link">
                 <a href="{{external_urls.spotify}}" target="_blank">
                   <img class="media-object image-profile image-profile-desktop" src="{{images.0.url}}" />
-                  <i class="material-icons profile-icon">person</i> <span class="medium"> My Profile </span>
+                  <i class="material-icons profile-icon">person</i> <span class="medium"> My Profile</span>
                 </a>
               </li>
               <!-- <li class="nav-item" onclick="deleteCookies();">
@@ -164,9 +147,26 @@
                 <i class="fas fa-info-circle"></i> <span class="regular"> App info </span>
               </li> -->
               <li class="nav-item" onclick="signOut();">
-                <!-- <i class="fas fa-sign-out-alt" ></i> -->
                 <i class="material-icons">exit_to_app</i>
                 <span class="medium"> Log Out </span>
+              </li>
+
+              <!-- <li class="nav-item screenshot step">
+                <span class="step-number">1.</span><span class="medium">  Take a screenshot  </span> <i class="fas fa-camera-retro"></i>
+                    
+              </li>
+
+            <li class="nav-item step" id="step-twitter">
+              
+              <a href="https://twitter.com/intent/tweet?button_hashtag=mytop50&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false">
+                
+                <span class="step-number">2.</span><span class="medium">  Tweet  #mytop50 </span>  <i class="fab fa-twitter twitter-icon"></i>
+              </a>
+            </li> -->
+
+              <li class="nav-item" id="btn-create-playlist">
+                <button type="button" class="btn btn-primary btn-create-playlist" id="add-playlist" onclick="create_playlist()">Add Playlist to Library</button>
+                <!-- <a >Create Playlist</a> -->
               </li>
 
             </ul>
