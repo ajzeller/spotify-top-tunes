@@ -44,6 +44,7 @@ var artistsShort;
 var artistsMedium;
 var artistsLong;
 var trackList;
+var desiredTracksCount = 50;
 
 // set intial conditions (Recent, Tracks)
 var listType = 'tracks';
@@ -127,7 +128,8 @@ function media_request(type, range) {
           $('.btn-' + range).button('toggle');
           $('.btn-' + type).button('toggle');
 
-          document.getElementById('add-playlist').innerHTML = "Add Playlist to Library";
+          // desiredTracksCount = 50;
+          document.getElementById('add-playlist').innerHTML = "Add Top <span id='trackCount'>" + desiredTracksCount + "</span> to Library";
 
           // $('.btn-' + type).button('toggle');
           // let responseJSON = response;
@@ -138,6 +140,30 @@ function media_request(type, range) {
     });
 
   });
+}
+
+function increaseDesiredTracksCount() {
+  console.log("you pressed increase");
+  if (desiredTracksCount < 50) {
+    desiredTracksCount += 5;
+    document.getElementById('trackCount').innerHTML = desiredTracksCount;
+    console.log(desiredTracksCount);
+  }
+  else {
+
+  }
+}
+
+function decreaseDesiredTracksCount() {
+  console.log("you pressed decrease");
+  if (desiredTracksCount > 5) {
+    desiredTracksCount -= 5;
+    document.getElementById('trackCount').innerHTML = desiredTracksCount;
+    console.log(desiredTracksCount);
+  }
+  else {
+
+  }
 }
 
 function displayCharts(response) {
@@ -198,7 +224,7 @@ function create_playlist() {
       break;
   }
 
-  for (i=0; i < trackList.items.length; i++) {
+  for (i=0; i < desiredTracksCount; i++) {
     playlistTracks.push("spotify:track:" + trackList.items[i].id);
   }
 
@@ -207,7 +233,7 @@ function create_playlist() {
   console.log(timePeriod);
   console.log(trackList.items.length);
 
-  var playlistName = "mytop50 " + timePeriod + " (" + month + " " + year + ")";
+  var playlistName = "mytop" + desiredTracksCount + " " + timePeriod + " (" + month + " " + year + ")";
   // var playlistName = "mytop50";
 
   console.log(playlistName);

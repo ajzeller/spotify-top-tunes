@@ -7,6 +7,8 @@ $white-hov: rgba(255,255,255,0.7);
 $grey-text: #9B9B9B;
 $spotify-green: #1DB954;
 $spotify-button-border: #1AA34A;
+$spotify-green-dark-1: #1E9548;
+$spotify-green-dark-2: #1F8242;
 // $grey-text: #eee;
 $white-lilac: #E9E6E9;
 $theme-purple: #8212E2;
@@ -17,6 +19,7 @@ $black-bg-transparent: rgba(18,18,18,0.8);
 $black-transparent: rgba(0,0,0,0.5);
 $lighter-black-background: #181818;
 $dark-border: #282828;
+$black-light-bg: #282828;
 $blue: #4988D4;
 $black-footer: #242424;
 
@@ -231,6 +234,7 @@ label:focus {
 }
 
 .btn-create-playlist {
+  grid-area: add-button;
   color: $white;
   display: inline-block;
   font-size: 1rem;
@@ -240,7 +244,7 @@ label:focus {
   // height: 50px;
   text-transform: uppercase;
   padding: 10px 20px;
-  margin: 10px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
   letter-spacing: 2px;
   font-weight: $heavy-weight;
   vertical-align: middle;
@@ -250,6 +254,8 @@ label:focus {
     background-color: $spotify-button-border;
   }
 }
+
+
 
 .filter-button-wrapper {
   width: 100%;
@@ -271,8 +277,11 @@ label:focus {
   z-index: 1;
 }
 
+
+
 .navbar {
   color: $black;
+  // background-color: $black-light-bg;
 
   // border-top: 0px solid $gradient-purple;
   // border-bottom: 2px solid $lighter-black-background;
@@ -404,6 +413,66 @@ label:focus {
   .profile-icon {
     display: inline-block;
   }
+
+  .container--create-playlist {
+    background-color: none;
+    border-radius: 100px;
+    height: auto;
+    border: 0px solid $black-light-bg;
+    margin: 10px 0px 0px 0px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "add-button add-button"
+                         "inc-button dec-button";
+    grid-column-gap: 8rem;            
+    grid-row-gap: 0.5rem;   
+
+    &:hover {
+      transform: translateY(0px);
+    }
+
+    #trackCount {
+      background-color: $spotify-green-dark-1;
+      padding: 7px 9px 3px 12px;
+      border-radius: 5px;
+      border-bottom: 4px solid $spotify-green-dark-2;
+    }
+  }
+
+  .btn-increment {
+    color: $white;
+    display: inline-block;
+    // font-size: 2rem;
+    background-color: #2A2A2A;
+    // border: 1px solid $spotify-button-border;
+    border-radius: 100px;
+    // height: 50px;
+    text-transform: uppercase;
+    // padding: 10px 20px;
+    // margin: 10px 0px 0px 0px;
+    letter-spacing: 2px;
+    font-weight: $heavy-weight;
+    vertical-align: middle;
+    // background: none;
+    
+    &:hover {
+      background-color: #3A3A3A;
+    }
+    .material-icons {
+      margin: 0px 0px 0px 0px;
+    }
+  }
+
+  #incrementIncrease {
+    grid-area: inc-button;
+  }
+
+  #incrementDecrease {
+    grid-area: dec-button;
+  }
+
+
 }
 
 .navbar-brand {
@@ -910,22 +979,41 @@ label:focus {
     display: none;
   }
 
-   .navbar .profile-icon {
-     display: none;
-   }
+  .navbar {
+    .profile-icon {
+      display: none;
+    }
 
-   .navbar .profile-link {
-     padding: 0px 0px;
-     margin: 0px 20px;
-   }
+    .profile-link {
+      padding: 0px 0px;
+      margin: 0px 20px;
+    }
 
-   .navbar .nav-item {
-    padding: 0 0 0 0px;
+    .nav-item {
+      padding: 0 0 0 0px;
 
-    &:nth-of-type(2) {
-      margin-right: 20px;
+      &:nth-of-type(2) {
+        margin-right: 20px;
+      }
+    }
+
+    .container--create-playlist {
+      margin: 0px 0px;
+      grid-template-columns: 5fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: "add-button inc-button dec-button";
+      background-color: $lighter-black-background;
+      border: 0.5px solid $black-light-bg;
+      grid-column-gap: 0rem;            
+      grid-row-gap: 0rem; 
+    }
+
+    .btn-increment {
+      background: none;
+
     }
   }
+    
 
    .image--iphone {
      width: 30%;

@@ -120,7 +120,7 @@
             <img class="media-object image-profile" src="{{images.0.url}}" />
             <!-- <span class="navbar-toggler-icon"></span> -->
             <i class="material-icons">
-              expand_more
+              playlist_add
             </i>
           </button>
 
@@ -164,8 +164,18 @@
               </a>
             </li> -->
 
-              <li class="nav-item" id="btn-create-playlist">
-                <button type="button" class="btn btn-primary btn-create-playlist" id="add-playlist" onclick="create_playlist()">Add Playlist to Library</button>
+              <li class="nav-item container--create-playlist">
+                <button type="button" class="btn btn-primary btn-create-playlist" id="add-playlist" onclick="create_playlist()">Add Top <span id='trackCount'>50</span> to Library</button>
+                <button type="button" class="btn btn-increment" id="incrementIncrease" onclick="increaseDesiredTracksCount()">
+                  <i class="material-icons">
+                    add_circle
+                  </i>
+                </button>
+                <button type="button" class="btn btn-increment" id="incrementDecrease" onclick="decreaseDesiredTracksCount();">
+                  <i class="material-icons">
+                    remove_circle
+                  </i>
+                </button>
                 <!-- <a >Create Playlist</a> -->
               </li>
 
