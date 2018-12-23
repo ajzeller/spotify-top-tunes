@@ -301,6 +301,7 @@ label:focus {
 .navbar-brand {
   font-size: 1.75rem;
   letter-spacing: .01em;
+  padding: 0;
   color: #24292E;
   font-weight: 400;
   text-decoration: none;
