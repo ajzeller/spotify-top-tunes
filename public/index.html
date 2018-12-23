@@ -107,7 +107,7 @@
     <!-- handlebars scripts -->
 
     <script id="navbar-Template" type="text/x-handlebars-template">
-      <nav class="navbar navbar-expand-lg navbar-dark navbar-transparent">
+      <nav class="navbar navbar-expand-lg navbar-dark navbar-transparent" id="top">
         <div class="container">
           <a class="navbar-brand" href="/">
               <img src="/assets/images/logo-2.svg" class="image--brand"/>
@@ -278,6 +278,11 @@
     <script id="footerSection" type="text/x-handlebars-template">
       <div class="container-footer">
         <div class="container">
+          <a href="#top" class="return-to-top">Back to top 
+            
+              <i class="fas fa-arrow-circle-up"></i>
+          </a>
+            
           <p>
             <!-- Made with ♥️ by <a href="https://interface.farm" target="_blank"><img src="/assets/images/if-logo.svg" alt="" class="if-logo"><span class="bold">interface</span><span class="regular">farm</span></a> -->
             Made with ♥️ by <a href="https://zeller.io" target="_blank">Andrew Zeller</a>.
@@ -285,7 +290,21 @@
             <span class="separator">//</span>
             <a href="https://github.com/ajzeller/spotify-top-tunes" class="github-link" target="_blank">Github <i class="fas fa-code"></i></a>
           </p>
+          
           <p>Love MyTop50? <span class="underline"><a href="https://www.buymeacoffee.com/zeller" target="_blank">Buy me a coffee</a></span> ☕️</p>
+        <!-- <button class="footer-about">
+          About <i class="fas fa-chevron-down"></i>
+        </button>
+
+        <div class="about-dropdown" id="about-reveal">
+          Privacy
+          <br>
+          This app does not store user data.
+          <br>
+          <br>
+          <span ></span>
+        </div> -->
+
         </div>
       </div>
     </script>
