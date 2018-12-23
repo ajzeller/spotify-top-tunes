@@ -29,15 +29,15 @@ $light-weight: 300;
 $medium-weight: 400;
 $heavy-weight: 600;
 
-::-webkit-scrollbar {
-  width: 16px;
-  height: 16px; }
+// ::-webkit-scrollbar {
+//   width: 16px;
+//   height: 16px; }
   
-  ::-webkit-scrollbar-thumb {
-  background-color: $black-footer;
-  -webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,0.10),inset 0 -1px 0 rgba(0,0,0,0.07); 
-  border-radius: 50px;
-}
+//   ::-webkit-scrollbar-thumb {
+//   background-color: $black-footer;
+//   -webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,0.10),inset 0 -1px 0 rgba(0,0,0,0.07); 
+//   border-radius: 50px;
+// }
 
 html {
   height: 100%;
