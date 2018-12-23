@@ -498,15 +498,15 @@ label:focus {
   grid-area: tracks;
   display: none;
   width: 100vw;
-  -webkit-animation: fadein 2s;
+  -webkit-animation: fadein 0.5s;
   /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 2s;
+  -moz-animation: fadein 0.5s;
   /* Firefox < 16 */
-  -ms-animation: fadein 2s;
+  -ms-animation: fadein 0.5s;
   /* Internet Explorer */
-  -o-animation: fadein 2s;
+  -o-animation: fadein 0.5s;
   /* Opera < 12.1 */
-  animation: fadein 2s; }
+  animation: fadein 0.5s; }
 
 #topTracks.show {
   display: block; }
@@ -546,6 +546,15 @@ label:focus {
     opacity: 1; } }
 
 #topArtists {
+  -webkit-animation: fadein 0.5s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 0.5s;
+  /* Firefox < 16 */
+  -ms-animation: fadein 0.5s;
+  /* Internet Explorer */
+  -o-animation: fadein 0.5s;
+  /* Opera < 12.1 */
+  animation: fadein 0.5s;
   grid-area: artists;
   display: none;
   width: 100vw; }
@@ -555,6 +564,7 @@ label:focus {
 
 .charts-container {
   max-width: 100%;
+  min-height: 100vh;
   margin: auto;
   display: grid;
   grid-template-areas: "tracks" "artists";

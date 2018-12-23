@@ -81,25 +81,14 @@
 
         </div> -->
 
-        <div id="filterButtons">
-        </div>
+        <div id="filterButtons"></div>
 
         <div class="charts-container">
-          <div id="topTracks">
-          </div>
-
-          <div id="topArtists">
-          </div>
+          <div id="topTracks"></div>
+          <div id="topArtists"></div>
         </div>
 
-        <div id="footer">
-        </div>
-
-
-
-
-
-      <!-- {{> footer }} -->
+        <div id="footer"></div>
 
       </div>
     </div>
@@ -227,7 +216,6 @@
     <script id="top-artists-template" type="text/x-handlebars-template">
 
 
-      <!-- {{> filterButtons }} -->
 
       <div class="track-list-wrapper">
         <div class="chart-title">
@@ -260,20 +248,24 @@
       </div>
     </script>
 
+    <!-- filter buttons -->
+
     <script id="filter-buttons" type="text/x-handlebars-template">
       <div class="filter-button-wrapper">
         <div class="btn-group btn-group-toggle btn-group-range" role="group" aria-label="Time interval" data-toggle="buttons">
-          <button type="button" class="btn btn-outline-primary btn-short" onclick="rangeClicked('short');">Recent</button>
-          <button type="button" class="btn btn-outline-primary btn-medium" onclick="rangeClicked('medium');">6 Months </button>
-          <button type="button" class="btn btn-outline-primary btn-long"  onclick="rangeClicked('long');">All time</button>
+          <button type="button" class="btn btn-outline-primary btn-short" onclick="rangeClicked_2('short');">Recent</button>
+          <button type="button" class="btn btn-outline-primary btn-medium" onclick="rangeClicked_2('medium');">6 Months </button>
+          <button type="button" class="btn btn-outline-primary btn-long"  onclick="rangeClicked_2('long');">All time</button>
         </div>
 
         <div class="btn-group btn-group-toggle btn-group-type" role="group" aria-label="Type" data-toggle="buttons">
-          <button type="button" class="btn btn-outline-primary btn-tracks" id='btn-tracks' onclick="typeClicked('tracks');">Tracks</button>
-          <button type="button" class="btn btn-outline-primary btn-artists " id='btn-artists' onclick="typeClicked('artists');">Artists</button>
+          <button type="button" class="btn btn-outline-primary btn-tracks" id='btn-tracks' onclick="typeClicked_2('tracks');">Tracks</button>
+          <button type="button" class="btn btn-outline-primary btn-artists " id='btn-artists' onclick="typeClicked_2('artists');">Artists</button>
         </div>
       </div>
     </script>
+
+    <!-- footer -->
 
     <script id="footerSection" type="text/x-handlebars-template">
       <div class="container-footer">

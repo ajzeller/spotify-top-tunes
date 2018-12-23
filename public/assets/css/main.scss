@@ -638,6 +638,7 @@ label:focus {
 
   // grid-template-areas: "track"
   //                      "footer";
+
   a {
     display: block;
     text-decoration: none;
@@ -744,11 +745,11 @@ label:focus {
   //  transition: opacity 0.4s ease-in;
   //  -moz-transition: opacity 0.4s ease-in;
   //  -webkit-transition: opacity 0.4s ease-in;
-   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-   -moz-animation: fadein 2s; /* Firefox < 16 */
-    -ms-animation: fadein 2s; /* Internet Explorer */
-     -o-animation: fadein 2s; /* Opera < 12.1 */
-        animation: fadein 2s;
+   -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
+   -moz-animation: fadein 0.5s; /* Firefox < 16 */
+    -ms-animation: fadein 0.5s; /* Internet Explorer */
+     -o-animation: fadein 0.5s; /* Opera < 12.1 */
+        animation: fadein 0.5s;
 
    &.show {
     display: block;
@@ -785,6 +786,13 @@ label:focus {
 }
 
 #topArtists {
+
+  -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 0.5s; /* Firefox < 16 */
+   -ms-animation: fadein 0.5s; /* Internet Explorer */
+    -o-animation: fadein 0.5s; /* Opera < 12.1 */
+       animation: fadein 0.5s;
+
   grid-area: artists;
   display: none;
   width: 100vw;
@@ -796,6 +804,7 @@ label:focus {
 
 .charts-container {
   max-width: 100%;
+  min-height: 100vh;
   margin: auto;
   display: grid;
   grid-template-areas: "tracks"
