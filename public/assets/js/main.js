@@ -42,6 +42,7 @@ var userProfile;
 var tracksShort = [ ];
 var tracksMedium = [ ];
 var tracksLong = [ ];
+var tracksRecent = [ ];
 var artistsShort = [ ];
 var artistsMedium = [ ];
 var artistsLong = [ ];
@@ -56,7 +57,7 @@ var listRange = "short";
 
 var desktop;
 window.matchMedia("(max-width: 767px)").matches ? desktop = false : desktop = true;
-console.log(`Desktop? ${desktop}`);
+// console.log(`Desktop? ${desktop}`);
 
 // get top tracks and artists for all durations
 
@@ -85,27 +86,6 @@ function api_query() {
         success: function(response) {
           tracksShort = response;
           console.log(tracksShort);
-
-          // document.getElementById('filter-Buttons').innerHTML = filterButtons();
-          // document.getElementById('topTracks').innerHTML = topTracksTemplate(response);
-          // displayCharts(response);
-          // if (listType == 'tracks') {
-          //   document.getElementById('topTracks').innerHTML = topTracksTemplate(response);
-          //
-          // } else {
-          //   document.getElementById('topArtists').innerHTML = topArtistsTemplate(response);
-          // }
-          // listType == 'tracks' ? document.getElementById('topTracks').innerHTML = topTracksTemplate(response) : document.getElementById('topTracks').innerHTML = topArtistsTemplate(response);
-          // document.getElementById('filterButtons').innerHTML = filterButtons();
-          // $('.btn-' + range).button('toggle');
-          // $('.btn-' + type).button('toggle');
-          // $("topTracks").toggleClass("show-mobile");
-          // $("topArtists").toggleClass("hide-mobile");
-          // $('.btn-' + type).button('toggle');
-          // let responseJSON = response;
-          // let responseJSON = JSON.stringify(response);
-          // Cookies.set('tracksShort', responseJSON);
-          // console.log(responseJSON);
         }
     });
 
@@ -119,27 +99,6 @@ function api_query() {
           success: function(response) {
             tracksMedium = response;
             console.log(tracksMedium);
-
-            // document.getElementById('filter-Buttons').innerHTML = filterButtons();
-            // document.getElementById('topTracks').innerHTML = topTracksTemplate(response);
-            // displayCharts(response);
-            // if (listType == 'tracks') {
-            //   document.getElementById('topTracks').innerHTML = topTracksTemplate(response);
-            //
-            // } else {
-            //   document.getElementById('topArtists').innerHTML = topArtistsTemplate(response);
-            // }
-            // listType == 'tracks' ? document.getElementById('topTracks').innerHTML = topTracksTemplate(response) : document.getElementById('topTracks').innerHTML = topArtistsTemplate(response);
-            // document.getElementById('filterButtons').innerHTML = filterButtons();
-            // $('.btn-' + range).button('toggle');
-            // $('.btn-' + type).button('toggle');
-            // $("topTracks").toggleClass("show-mobile");
-            // $("topArtists").toggleClass("hide-mobile");
-            // $('.btn-' + type).button('toggle');
-            // let responseJSON = response;
-            // let responseJSON = JSON.stringify(response);
-            // Cookies.set('tracksShort', responseJSON);
-            // console.log(responseJSON);
           }
       });
 
@@ -153,27 +112,20 @@ function api_query() {
       success: function(response) {
         tracksLong = response;
         console.log(tracksLong);
-        // document.getElementById('filter-Buttons').innerHTML = filterButtons();
-        // document.getElementById('topTracks').innerHTML = topTracksTemplate(response);
-        // displayCharts(response);
-        // if (listType == 'tracks') {
-        //   document.getElementById('topTracks').innerHTML = topTracksTemplate(response);
-        //
-        // } else {
-        //   document.getElementById('topArtists').innerHTML = topArtistsTemplate(response);
-        // }
-        // listType == 'tracks' ? document.getElementById('topTracks').innerHTML = topTracksTemplate(response) : document.getElementById('topTracks').innerHTML = topArtistsTemplate(response);
-        // document.getElementById('filterButtons').innerHTML = filterButtons();
-        // $('.btn-' + range).button('toggle');
-        // $('.btn-' + type).button('toggle');
-        // $("topTracks").toggleClass("show-mobile");
-        // $("topArtists").toggleClass("hide-mobile");
-        // $('.btn-' + type).button('toggle');
-        // let responseJSON = response;
-        // let responseJSON = JSON.stringify(response);
-        // Cookies.set('tracksShort', responseJSON);
-        // console.log(responseJSON);
       }
+  });
+
+  // request tracks + recent
+
+  $.ajax({
+    url: 'https://api.spotify.com/v1/me/player/recently-played?limit=50',
+    headers: {
+      'Authorization': 'Bearer ' + access_token
+    },
+    success: function(response) {
+      tracksRecent = response;
+      console.log(tracksRecent);
+    }
   });
 
   // request artists + short
@@ -186,28 +138,6 @@ function api_query() {
         success: function(response) {
           artistsShort = response;
           console.log(artistsShort);
-          // document.getElementById('filter-Buttons').innerHTML = filterButtons();
-          // document.getElementById('topArtists').innerHTML = topArtistsTemplate(response);
-          // displayCharts(response);
-          // if (listType == 'tracks') {
-          //   document.getElementById('topTracks').innerHTML = topTracksTemplate(response);
-          //
-          // } else {
-          //   document.getElementById('topArtists').innerHTML = topArtistsTemplate(response);
-          // }
-          // listType == 'tracks' ? document.getElementById('topTracks').innerHTML = topTracksTemplate(response) : document.getElementById('topTracks').innerHTML = topArtistsTemplate(response);
-          // document.getElementById('filterButtons').innerHTML = filterButtons();
-          // $('.btn-' + range).button('toggle');
-          // $('.btn-' + type).button('toggle');
-
-          // desiredTracksCount = 50;
-          // document.getElementById('add-playlist').innerHTML = "Add Top <span id='trackCount'>" + desiredTracksCount + "</span> to Library";
-
-          // $('.btn-' + type).button('toggle');
-          // let responseJSON = response;
-          // let responseJSON = JSON.stringify(response);
-          // Cookies.set('tracksShort', responseJSON);
-          // console.log(responseJSON);
         }
     });
 
@@ -221,28 +151,6 @@ function api_query() {
       success: function(response) {
         artistsMedium = response;
         console.log(artistsMedium);
-        // document.getElementById('filter-Buttons').innerHTML = filterButtons();
-        // document.getElementById('topArtists').innerHTML = topArtistsTemplate(response);
-        // displayCharts(response);
-        // if (listType == 'tracks') {
-        //   document.getElementById('topTracks').innerHTML = topTracksTemplate(response);
-        //
-        // } else {
-        //   document.getElementById('topArtists').innerHTML = topArtistsTemplate(response);
-        // }
-        // listType == 'tracks' ? document.getElementById('topTracks').innerHTML = topTracksTemplate(response) : document.getElementById('topTracks').innerHTML = topArtistsTemplate(response);
-        // document.getElementById('filterButtons').innerHTML = filterButtons();
-        // $('.btn-' + range).button('toggle');
-        // $('.btn-' + type).button('toggle');
-
-        // desiredTracksCount = 50;
-        // document.getElementById('add-playlist').innerHTML = "Add Top <span id='trackCount'>" + desiredTracksCount + "</span> to Library";
-
-        // $('.btn-' + type).button('toggle');
-        // let responseJSON = response;
-        // let responseJSON = JSON.stringify(response);
-        // Cookies.set('tracksShort', responseJSON);
-        // console.log(responseJSON);
       }
   });
 
@@ -256,28 +164,6 @@ function api_query() {
       success: function(response) {
         artistsLong = response;
         console.log(artistsLong);
-        // document.getElementById('filter-Buttons').innerHTML = filterButtons();
-        // document.getElementById('topArtists').innerHTML = topArtistsTemplate(response);
-        // displayCharts(response);
-        // if (listType == 'tracks') {
-        //   document.getElementById('topTracks').innerHTML = topTracksTemplate(response);
-        //
-        // } else {
-        //   document.getElementById('topArtists').innerHTML = topArtistsTemplate(response);
-        // }
-        // listType == 'tracks' ? document.getElementById('topTracks').innerHTML = topTracksTemplate(response) : document.getElementById('topTracks').innerHTML = topArtistsTemplate(response);
-        // document.getElementById('filterButtons').innerHTML = filterButtons();
-        // $('.btn-' + range).button('toggle');
-        // $('.btn-' + type).button('toggle');
-
-        // desiredTracksCount = 50;
-        // document.getElementById('add-playlist').innerHTML = "Add Top <span id='trackCount'>" + desiredTracksCount + "</span> to Library";
-
-        // $('.btn-' + type).button('toggle');
-        // let responseJSON = response;
-        // let responseJSON = JSON.stringify(response);
-        // Cookies.set('tracksShort', responseJSON);
-        // console.log(responseJSON);
       }
     });
 
@@ -397,13 +283,6 @@ function decreaseDesiredTracksCount() {
 
 function displayCharts() {
 
-  // toggles active state of type/range buttons
-
-
-  document.getElementById('filterButtons').innerHTML = filterButtons();
-  $('.btn-' + listType).button('toggle');
-  $('.btn-' + listRange).button('toggle');
-
   switch(listRange) {
     case "short":
       document.getElementById('topTracks').innerHTML = topTracksTemplate(tracksShort);
@@ -423,35 +302,72 @@ function displayCharts() {
       trackList = tracksLong;
     break;
 
+    case "recent":
+      if  (listType == 'tracks') {
+        console.log(listType);
+        console.log("listType is tracks");
+
+        document.getElementById('topTracks').innerHTML = recentTracksTemplate(tracksRecent);
+        trackList = tracksRecent;
+        $('.btn-artists').addClass('disabled');
+        
+      } else {
+        listType = 'tracks';
+        console.log(listType);
+        console.log("clicked recent while artists selected");
+
+        $("#topTracks").toggleClass("show");
+        $("#topArtists").toggleClass("show");
+
+        document.getElementById('topTracks').innerHTML = recentTracksTemplate(tracksRecent);
+        $('.btn-' + listType).button('toggle');
+        trackList = tracksRecent;
+        $('.btn-artists').addClass('disabled');
+      }
+      
+    break;
+
   }
 }
 
-function typeClicked(type) {
-  listType = type; //updates list type
+// function typeClicked(type) {
+//   listType = type; //updates list type
 
-  // switches tracks/artists visibility on mobile 
+//   // switches tracks/artists visibility on mobile 
 
-  $("#topTracks").toggleClass("show");
-  $("#topArtists").toggleClass("show");
+//   $("#topTracks").toggleClass("show");
+//   $("#topArtists").toggleClass("show");
 
-  media_request(listType, listRange);
-}
+//   media_request(listType, listRange);
+// }
 
-function rangeClicked(range) {
-  listRange = range; //updates duration type
+// function rangeClicked(range) {
+//   listRange = range; //updates duration type
 
-  $('.btn-' + range).button('toggle');
+//   $('.btn-' + range).button('toggle');
 
-  media_request(listType, listRange);
-}
+//   media_request(listType, listRange);
+// }
 
 // trying alt approach
 
 function typeClicked_2(type) {
   if (type != listType ) {
+    
+    if (listRange != 'recent') {
+    
+      //updates list type
 
-    //updates list type
     listType = type; 
+    console.log(listType);
+    console.log(listRange);
+
+
+    // toggles active state of type/range buttons
+
+    document.getElementById('filterButtons').innerHTML = filterButtons();
+    $('.btn-' + listType).button('toggle');
+    $('.btn-' + listRange).button('toggle');
 
     // switches tracks/artists visibility on mobile 
 
@@ -460,15 +376,36 @@ function typeClicked_2(type) {
 
     displayCharts();
 
+    } else {
+      document.getElementById('filterButtons').innerHTML = filterButtons();
+      $('.btn-' + listType).button('toggle');
+      $('.btn-' + listRange).button('toggle');
+      $('.btn-artists').addClass('disabled');
+
+
+      console.log("last played is only for tracks");
+
+    }
+
     document.getElementById('add-playlist').innerHTML = "Add Top <span id='trackCount'>" + desiredTracksCount + "</span> to Library";
 
-    
+  } else {
+    console.log("you already clicked this type");
   }
 }
 
 
 function rangeClicked_2(range) {
   listRange = range; //updates duration type
+  console.log(listType);
+    console.log(listRange);
+
+    // toggles active state of type/range buttons
+
+
+    document.getElementById('filterButtons').innerHTML = filterButtons();
+    $('.btn-' + listType).button('toggle');
+    $('.btn-' + listRange).button('toggle');
 
   displayCharts();
 
@@ -499,20 +436,29 @@ function create_playlist() {
   console.log(playlistTracks);
 
   switch(listRange) {
+    case "recent":
+      timePeriod = "Recently Played";
+      break;
     case "short":
-      timePeriod = "Recent";
+      timePeriod = "Past Month";
       break;
     case "medium":
-      timePeriod = "6 Months";
+      timePeriod = "Past 6 Months";
       break;
     case "long":
       timePeriod = "All Time";
       break;
   }
-
+if (listRange != 'recent') {
   for (i=0; i < desiredTracksCount; i++) {
     playlistTracks.push("spotify:track:" + trackList.items[i].id);
   }
+} else {
+  for (i=0; i < desiredTracksCount; i++) {
+    playlistTracks.push("spotify:track:" + trackList.items[i].track.id);
+  }
+}
+  
 
   console.log(playlistTracks);
 
@@ -611,6 +557,9 @@ var topTracksSource = document.getElementById('top-tracks-template').innerHTML,
     topTracksTemplate = Handlebars.compile(topTracksSource);
     // topTracksPlaceholder = document.getElementById('topTracks');
 // var params = getHashParams();
+
+var recentTracksSource = document.getElementById('recent-tracks-template').innerHTML,
+    recentTracksTemplate = Handlebars.compile(recentTracksSource);
 
 var navbarSource = document.getElementById('navbar-Template').innerHTML,
     navbarTemplate = Handlebars.compile(navbarSource);
@@ -716,8 +665,24 @@ if (refresh_token) {
 
     $("#topTracks").toggleClass("show");
     // $("#topArtists").toggleClass("show");
-    api_query();
 
+    var promise = new Promise(function(resolve, reject) {
+      api_query();
+
+      if(true) {
+        resolve("it worked");
+      }
+      else {
+        reject(Error("It broke"));
+      }
+    });
+
+    // promise.then(function(result) {
+    //   displayCharts();
+    // }, function(err) {
+    //   console.log("error");
+    // });
+    
     media_request(listType, listRange);
 
 

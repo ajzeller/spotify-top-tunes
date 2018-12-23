@@ -103,7 +103,7 @@ label:focus {
   border: 0.5px solid #ddd;
   background-color: #fff;
   outline: none;
-  padding: 0.3rem 0.6rem; }
+  padding: 0.3rem 0.3rem; }
 
 .btn-group .btn:focus {
   outline: 0 !important;
@@ -112,7 +112,7 @@ label:focus {
 .btn-group .btn-outline-primary {
   color: #fff;
   font-weight: lighter;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   background-color: #121212;
   border: 1px solid #282828;
   border-bottom: 3px solid #282828;
@@ -159,13 +159,16 @@ label:focus {
 
 .filter-button-wrapper {
   width: 100%;
-  padding: 5px;
+  padding: 2px;
   display: grid;
   grid-gap: 0.1rem;
   grid-template-areas: "range type";
   grid-template-columns: 6fr 4fr;
   justify-items: center;
   margin: 0px auto 0px auto; }
+
+.filter-button-wrapper i {
+  align-self: center; }
 
 #filterButtons {
   position: -webkit-sticky;
@@ -632,10 +635,12 @@ label:focus {
   display: none; }
 
 .btn-group-type {
-  grid-area: type; }
+  grid-area: type;
+  margin-left: 1vw; }
 
 .btn-group-range {
-  grid-area: range; }
+  grid-area: range;
+  margin-right: 1vw; }
 
 .chart-title {
   color: #9B9B9B;
@@ -731,6 +736,9 @@ label:focus {
     display: inline-block; }
   .btn-group .btn-outline-primary {
     font-size: 0.8rem; }
+  .btn-group-range {
+    justify-self: center;
+    margin: 0; }
   .charts-container {
     grid-template-areas: "tracks" "artists";
     grid-template-columns: 1fr;

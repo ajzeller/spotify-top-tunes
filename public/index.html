@@ -95,6 +95,8 @@
 
     <!-- handlebars scripts -->
 
+    <!-- navbar hbs template -->
+
     <script id="navbar-Template" type="text/x-handlebars-template">
       <nav class="navbar navbar-expand-lg navbar-dark navbar-transparent" id="top">
         <div class="container">
@@ -175,9 +177,9 @@
       </nav>
     </script>
 
-    <script id="top-tracks-template" type="text/x-handlebars-template">
+    <!-- top tracks hbs template -->
 
-      <!-- {{> filterButtons }} -->
+    <script id="top-tracks-template" type="text/x-handlebars-template">
 
       <div class="track-list-wrapper">
         <div class="chart-title">
@@ -209,14 +211,11 @@
           </a>
         {{/each}}
       </div>
-
-
     </script>
 
+    <!-- top artists hbs template -->
+
     <script id="top-artists-template" type="text/x-handlebars-template">
-
-
-
       <div class="track-list-wrapper">
         <div class="chart-title">
           <h3>
@@ -248,12 +247,49 @@
       </div>
     </script>
 
+    <!-- recent tracks hbs template  -->
+
+    <script id="recent-tracks-template" type="text/x-handlebars-template">
+
+      <div class="track-list-wrapper">
+        <div class="chart-title">
+          <h3>
+            <i class="material-icons">queue_music</i>
+            Recently Played Tracks
+        </h3>
+      </div>
+        {{#each items}}
+          <a href="{{this.track.external_urls.spotify}} " target="_blank" class="track-list-item">
+            <div class="album-cover">
+                <div class="top-left">{{inc @index}} </div>
+                <img class="album-artwork" src="{{this.track.album.images.0.url}}" />
+            </div>
+            <div class="track-info">
+                <div class="track">
+                  <span class="name-mobile">{{truncate this.track.name 30}}</span>
+                  <span class="name-desktop">{{this.track.name}}</span>
+                </div>
+                <div class="artist">
+                  {{#each this.track.artists}}
+                    <span class="artist-name">{{this.name}}</span>
+                  {{/each}}
+                </div>
+            </div>
+              <div class="spotify-link">
+                <i class="fas fa-play"></i>
+              </div>
+          </a>
+        {{/each}}
+      </div>
+    </script>
+
     <!-- filter buttons -->
 
     <script id="filter-buttons" type="text/x-handlebars-template">
       <div class="filter-button-wrapper">
         <div class="btn-group btn-group-toggle btn-group-range" role="group" aria-label="Time interval" data-toggle="buttons">
-          <button type="button" class="btn btn-outline-primary btn-short" onclick="rangeClicked_2('short');">Recent</button>
+          <button type="button" class="btn btn-outline-primary btn-recent" onclick="rangeClicked_2('recent');">Last Played</button>
+          <button type="button" class="btn btn-outline-primary btn-short" onclick="rangeClicked_2('short');">1 Month</button>
           <button type="button" class="btn btn-outline-primary btn-medium" onclick="rangeClicked_2('medium');">6 Months </button>
           <button type="button" class="btn btn-outline-primary btn-long"  onclick="rangeClicked_2('long');">All time</button>
         </div>
@@ -261,6 +297,7 @@
         <div class="btn-group btn-group-toggle btn-group-type" role="group" aria-label="Type" data-toggle="buttons">
           <button type="button" class="btn btn-outline-primary btn-tracks" id='btn-tracks' onclick="typeClicked_2('tracks');">Tracks</button>
           <button type="button" class="btn btn-outline-primary btn-artists " id='btn-artists' onclick="typeClicked_2('artists');">Artists</button>
+          <!-- <i class="far fa-clock"></i> -->
         </div>
       </div>
     </script>
