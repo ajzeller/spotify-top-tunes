@@ -727,10 +727,14 @@ label:focus {
   .image-profile-desktop {
     display: inline-block; }
   .btn-group .btn-outline-primary {
-    font-size: 0.8rem; }
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem; }
   .btn-group-range {
-    justify-self: center;
-    margin: 0; }
+    justify-self: left;
+    margin: 0 0 0 100px; }
+  .btn-group-type {
+    justify-self: right;
+    margin: 0 100px 0 0; }
   .charts-container {
     grid-template-areas: "tracks" "artists";
     grid-template-columns: 1fr;
@@ -763,6 +767,9 @@ label:focus {
     grid-template-columns: 1fr; }
   .btn-group-type {
     display: none; }
+  .btn-group-range {
+    justify-self: center;
+    margin: 0; }
   .charts-container {
     grid-template-areas: "tracks artists";
     grid-template-columns: 1fr 1fr;

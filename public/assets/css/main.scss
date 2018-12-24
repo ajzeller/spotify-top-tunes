@@ -1077,12 +1077,18 @@ label:focus {
    .btn-group {
      .btn-outline-primary {
        font-size: 0.8rem;
+       padding: 0.5rem 1rem;
      }
    }
 
    .btn-group-range {
-     justify-self: center;
-     margin: 0;
+     justify-self: left;
+     margin: 0 0 0 100px;
+   }
+
+   .btn-group-type {
+    justify-self: right;
+     margin: 0 100px 0 0;
    }
 
    .charts-container {
@@ -1163,6 +1169,11 @@ label:focus {
 
   .btn-group-type {
     display: none;
+  }
+
+  .btn-group-range {
+    justify-self: center;
+    margin: 0;
   }
 
   .charts-container {
