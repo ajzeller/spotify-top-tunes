@@ -603,10 +603,11 @@ label:focus {
   height: 4rem;
   padding: 0;
   margin: auto 0rem auto 0;
-  transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.75s cubic-bezier(0.165, 0.84, 0.44, 1);
 
   &:hover {
-    transform: translate(-2px, -2px);
+    // transform: rotate(180deg);
+    transform: translate(0px, -2px);
 
     // transform: rotate(5deg);
   }
@@ -1011,7 +1012,7 @@ label:focus {
   .text--brand {
     height: 5rem;
     // font-size: 2rem;
-    margin: 0 0 0 4.5rem;
+    margin: 0 0 0 3rem;
   }
 
   // .filter-button-wrapper {

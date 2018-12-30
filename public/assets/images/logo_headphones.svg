@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300px" height="400px" viewBox="0 0 300 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>twitter-avatar copy 4</title>
+    <desc>Created with Sketch.</desc>
+    <g id="twitter-avatar-copy-4" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="bg" fill="#181818" x="0" y="-4.54747351e-13" width="300" height="400"></rect>
+        <g id="Group" transform="translate(58.000000, 123.500000)">
+            <path d="M15.4962595,106.326823 C16.0758085,35.5099826 41.7219426,0.1015625 92.4346618,0.1015625 C143.147381,0.1015625 168.50374,35.5099826 168.50374,106.326823" id="Path-5" stroke="#FFFFFF" stroke-width="10"></path>
+            <path d="M20.4962595,76.3268229 L30.4962595,76.3268229 L30.4962595,136.326823 L20.4962595,136.326823 C9.45056452,136.326823 0.49625952,127.372518 0.49625952,116.326823 L0.49625952,96.3268229 C0.49625952,85.2811279 9.45056452,76.3268229 20.4962595,76.3268229 Z" id="Rectangle" fill="#FFFFFF"></path>
+            <path d="M173.50374,76.3268229 L183.50374,76.3268229 L183.50374,136.326823 L173.50374,136.326823 C162.458045,136.326823 153.50374,127.372518 153.50374,116.326823 L153.50374,96.3268229 C153.50374,85.2811279 162.458045,76.3268229 173.50374,76.3268229 Z" id="Rectangle" fill="#FFFFFF" transform="translate(168.503740, 106.326823) scale(-1, 1) translate(-168.503740, -106.326823) "></path>
+            <text id="50" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="72" font-weight="bold" letter-spacing="-0.5" fill="#FFFFFF">
+                <tspan x="49.6" y="132.917003">50</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

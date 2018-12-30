@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="75px" height="100px" viewBox="0 0 75 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M33.6567377,17.7701212 L6.1567377,1.51230868 C3.9223627,0.191996177 0.500487699,1.47324618 0.500487699,4.73887118 L0.500487699,37.2466837 C0.500487699,40.1763712 3.6801752,41.9419962 6.1567377,40.4732462 L33.6567377,24.2232462 C36.1098627,22.7779337 36.1176752,19.2154337 33.6567377,17.7701212 Z" id="path-1"></path>
+    </defs>
+    <g id="Artboard-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(27.000000, 29.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+            <g mask="url(#mask-2)" fill="#8F8F8F" id="Rectangle">
+                <g transform="translate(-7.000000, 0.999188)">
+                    <rect fill-opacity="0.9" x="0" y="0" width="50" height="5"></rect>
+                    <rect fill-opacity="0.8" x="0" y="5" width="50" height="5"></rect>
+                    <rect fill-opacity="0.7" x="0" y="10" width="50" height="5"></rect>
+                    <rect fill-opacity="0.6" x="0" y="15" width="50" height="5"></rect>
+                    <rect fill-opacity="0.5" x="0" y="20" width="50" height="5"></rect>
+                    <rect fill-opacity="0.4" x="0" y="25" width="50" height="5"></rect>
+                    <rect fill-opacity="0.3" x="0" y="30" width="50" height="5"></rect>
+                    <rect fill-opacity="0.2" x="0" y="35" width="50" height="5"></rect>
+                    <rect fill-opacity="0.1" x="0" y="40" width="50" height="5"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
