@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="200px" height="400px" viewBox="0 0 200 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
-    <title>twitter-avatar copy 6</title>
+    <title>icon_sort_1</title>
     <desc>Created with Sketch.</desc>
     <defs>
         <linearGradient x1="-34.1718948%" y1="51.9629296%" x2="50%" y2="51.9629296%" id="linearGradient-1">
@@ -13,8 +13,7 @@
             <stop stop-color="#FFFFFF" offset="100%"></stop>
         </linearGradient>
     </defs>
-    <g id="twitter-avatar-copy-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect id="bg" fill="#181818" x="0" y="0" width="200" height="400"></rect>
+    <g id="icon_sort_1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Group-4" transform="translate(37.500000, 83.281553)" fill-rule="nonzero">
             <g id="arrow-up" transform="translate(2.804613, 0.186885)">
                 <path d="M107.309677,43.2075847 L24.7046485,-5.62794483 C17.9929899,-9.59392488 7.71429604,-5.74528152 7.71429604,4.0640656 L7.71429604,101.711657 C7.71429604,110.511909 17.2655024,115.815527 24.7046485,111.403668 L107.309677,62.5916056 C114.678421,58.2501481 114.701888,47.5490422 107.309677,43.2075847 Z" id="Mask" transform="translate(60.279667, 52.909557) rotate(-90.000000) translate(-60.279667, -52.909557) "></path>
